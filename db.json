@@ -1,0 +1,18 @@
+{
+  "movies":[
+               
+  ]
+  ,
+  "register": [
+    {
+      "id": 1,
+      "username": "ram_upadhyay",
+      "password": "Ram@123"
+    },
+    {
+      "id": 2,
+      "username": "kirti_yadav",
+      "password": "Kirti@123"
+    }
+  ]
+}
