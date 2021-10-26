@@ -30,10 +30,10 @@ export default class NavbarComp extends Component {
                             <ul className="navbar-nav ml-auto ">
                                
                                 <li className="nav-item">
-                                    <a  href="/login" data-testid="login" className="btn btn-success">Login</a>
+                                    <a  href="/login" data-testid="login" className="btn btn-success m-2">Login</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a  href="/logout" data-testid="logout" className="btn btn-danger">Logout</a>
+                                    <a  href="/logout" data-testid="logout" className="btn btn-danger m-2">Logout</a>
                                 </li>
                                
                             </ul>

@@ -14,7 +14,6 @@ export default function Login() {
          console.log(data) 
          data.map(item=>{
             if(item.username == UserName && item.password == Password){
-               alert("login")
                cout = cout + 1 ;
                history.push('/movies')
             }
