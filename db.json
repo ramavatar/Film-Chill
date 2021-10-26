@@ -744,4 +744,21 @@
       "password": "Kirti@123"
     }
   ]
+  ,
+  "favoritesMovies":[
+    {
+      "genre":[{
+        "0":"Action",
+        "1":"Crime",
+        "2":"Drama"
+      }],
+      "imageurl":"https://m.media-amazon.com/images/M/MV5BYzE1ZTRkZDgtNTUyOS00MzRmLWE4NzUtZGNmZDgxOWI3Mzc4XkEyXkFqcGdeQXVyMzc4ODY4MTk@._V1_UY268_CR4,0,182,268_AL_.jpg",
+      "imdbid":"tt10264732",
+      "imdbrating":7.5,
+      "released":2019,
+      "synopsis":"'Muna' is the story of a spirited girl raised by her grandmother; the last surviving member of their family. Muna's driving desire to provide a better life for herself and grandmother in ...",
+      "title":"Muna",
+      "type":"movie"
+      }
+  ]
 }

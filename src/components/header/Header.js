@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Login from '../login/Login';
 import Register from '../register/Register';
-import Movies from '../movies/Movies'
+import Movies from '../movies/Movies';
+import AboutUs from '../aboutUs/AboutUs'
 import logo from '../assets/logo.jpg';
 import './Header.css';
+import FavoritesMovies from '../favorites/Favorites';
 export default class NavbarComp extends Component {
     render() {
         return (
@@ -21,7 +23,7 @@ export default class NavbarComp extends Component {
                                     <a href="/movies" className="nav-link" aria-current="page">Movies</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="/fav" className="nav-link" aria-current="page">Favorites</a>
+                                    <a href="/favorites" className="nav-link" aria-current="page">Favorites</a>
                                 </li>
                                 <li className="nav-item">
                                     <a href="/" className="nav-link" aria-current="page">AboutUs</a>
@@ -44,7 +46,8 @@ export default class NavbarComp extends Component {
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/movies" component={Movies} />
-                    <Route exact path="/movies" component={Movies} />
+                    <Route exact path="/favorites" component={FavoritesMovies} />
+                    <Route exact path="/" component={AboutUs} />
                 </Switch>
             </Router>
         )
