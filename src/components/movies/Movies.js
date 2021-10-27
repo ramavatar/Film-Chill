@@ -1,38 +1,34 @@
-
 import React from 'react'
-import { useState, useEffect } from 'react';
+import Card from '../card/Card'
+import { useState, useEffect } from 'react'
+import Header from '../header/Header'
+export default function Dashboard() {
 
-export default function Movies() {
-    const [allMovies, setAllMovies] = useState([])
-    fetch("http://localhost:3001/movies")
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setAllMovies(data)
-        })
-        .catch(err => {
-            console.error(err);
-        });
+    const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+    const [movieApi, setmovieApi] = useState([])
+
+    useEffect(() => {
+        fetch("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.results);
+                setmovieApi(data.results)
+            })
+    }, [])
 
     return (
-        <div className="container" style={{ paddingBottom: "4em" }}>
-            <div className="row">
-                {
-                    allMovies.map(item => (
-                        <div className="col-sm-12 md-12 col-lg-4 mt-4">
-                            <div className="card" style={{ width: "20rem" }}>
-                                <img src={item.imageurl} style={{ height: '10rem' }} data-testid="image" className="card-img-top" alt="No image Found" />
-                                <div className="card-body">
-                                    <h6 className="card-title">{item.title}</h6>
-                                    <i className="card-text">Rating : {item.imdbrating}</i>
-                                    <p className="card-text">Released Year : {item.released}</p>
-                                    <button data-testid="btnReadLater" className="btn btn-primary m-2" >Favorites</button>
-                                    <button data-testid="btnReadLater" className="btn btn-warning m-2" >Book</button>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+        <>
+        <Header/>
+        <div>
+
+            <div id="dashboard" className="container" style={{paddingBottom:'4rem'}}>
+                <div className="row">
+                    {
+                        movieApi.map(item => <Card key={item.id} title={item.original_title} image={IMG_URL + item.poster_path} release_date={item.release_date} overview={item.overview} rating={item.vote_average} />)
+                    }
+                </div>
             </div>
         </div>
+        </>
     )
 }
