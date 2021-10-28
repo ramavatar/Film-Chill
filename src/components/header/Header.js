@@ -3,6 +3,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 import './Header.css';
+
 export default class NavbarComp extends Component {
     render() {
         return (
@@ -17,6 +18,9 @@ export default class NavbarComp extends Component {
                             <li className="nav-item">
                                 <a href="/movies" className="nav-link" aria-current="page">Movies</a>
                             </li>
+                            {/* <li className="nav-item">
+                                <a href="/bookNow" className="nav-link" aria-current="page">BookNow</a>
+                            </li> */}
                             {
                                 localStorage.getItem("token") ?
                                     <li className="nav-item">

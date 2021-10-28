@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import { useHistory } from 'react-router-dom';
+import BookNow from '../bookNow/BookNow';
 export default function FavoritesMovies() {
     const history = useHistory();
     const [allFavoritesMovies, setFavoritesMovies] = useState([])
@@ -17,8 +18,8 @@ export default function FavoritesMovies() {
                     cout = cout + 1
                 }
             })
-            if(cout==0){
-                history.push("/")
+            if (cout == 0) {
+                history.push("/booknow")
             }
             setFavoritesMovies(arr)
             console.log(arr);
