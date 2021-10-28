@@ -4,12 +4,19 @@ import { useState, useEffect } from 'react';
 import Header from '../header/Header';
 
 export default function FavoritesMovies() {
+
     const [allFavoritesMovies, setFavoritesMovies] = useState([])
+    var arr = [];
     fetch("http://localhost:3001/favorites")
         .then(res => res.json())
         .then(data => {
-            console.log(data)
-            setFavoritesMovies(data)
+           data.map(item=>{
+               if(localStorage.getItem("token")==item.userName){
+                    arr.push(item)
+               }
+           })
+           setFavoritesMovies(arr)
+           console.log(arr);
         })
         .catch(err => {
             console.error(err);

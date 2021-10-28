@@ -24,7 +24,7 @@ export default function Login() {
                if (item.username === UserName && item.password === Password) {
                   cout = cout + 1;
                   localStorage.setItem('token', UserName);
-                  history.push('/favorites');
+                  history.push('/movies');
                }
             })
             if (cout === 0) {
