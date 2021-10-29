@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Header from '../header/Header';
@@ -28,6 +27,17 @@ export default function FavoritesMovies() {
             console.error(err);
         });
 
+    const DeleteFavFunction = (id) => {
+        console.log(id);
+        let filteredFav = FavoritesMovies.filter(x => x.id !== id)
+        // console.log(filteredContacts);
+        fetch(`http://localhost:3004/favorites/${id}`, {
+
+            method: "DELETE"
+        })
+        setFavoritesMovies(filteredFav)
+    }
+
     return (
         <>
             <Header />
@@ -37,7 +47,7 @@ export default function FavoritesMovies() {
                         allFavoritesMovies.map(item => (
                             <div className="col-sm-12 md-12 col-lg-4 mt-4">
                                 <div className="card" style={{ width: "20rem" }}>
-                                    <img src={item.image} style={{ height: '10rem' }} data-testid="image" className="card-img-top" alt="No image Found" />
+                                    <img src={item.image} style={{ height: '15rem' }} data-testid="image" className="card-img-top" alt="No image Found" />
                                     <div className="card-body">
                                         <h6 className="card-title">{item.title}</h6>
                                         {/* <i className="card-text">{item.overview}</i> */}
@@ -49,7 +59,8 @@ export default function FavoritesMovies() {
                                             {item.rating}
                                             <span className="fa fa-thumbs-o-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                         </p>
-                                        <button data-testid="btnReadLater" className="btn btn-warning m-2 align-bottom">Book Movies</button>
+                                        <button data-testid="btnReadLater" className="btn btn-warning m-2 align-bottom">Book Movie</button>
+                                        {/* <button data-testid="btnDealete" className="btn btn-warning m-2 align-bottom" onClick={DeleteFavFunction}>Delete</button> */}
                                     </div>
                                 </div>
                             </div>

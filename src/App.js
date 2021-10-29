@@ -10,6 +10,7 @@ import Logout from '../src/components/logout/Logout';
 import './App.css';
 import Details from './components/details/Details';
 import BookNow from './components/bookNow/BookNow';
+import Filter from './components/filter/Filter';
 function App() {
   return (
     <div>
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/favorites" component={() => localStorage.getItem("token") ? <Favorites /> : <Redirect to="/login" />} />
           <Route exact path="/bookNow" component={BookNow}/>
           <Route exact path="/" component={AboutUs} />
+          <Route exact path="/filter" component={Filter} />
           <Route exact path="/details" component={Details} />
           <Route exact path="/logout" component={() => localStorage.getItem("token") ? <Logout /> : <Redirect to="/login" />} />
         </Switch>

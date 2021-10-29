@@ -35,7 +35,7 @@ export default function Details() {
                                             <span class="fa fa-star checked m-2" style={{ color: 'orange', paddingLeft: '15%' }}></span> {item.rating}
                                             <span className="fa fa-thumbs-o-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                         </p>
-                                        <button className="btn btn-warning m-2" >Book Movies</button>
+                                        <button className="btn btn-warning m-2" >Book Movie</button>
                                     </div>
                                 </div>
                             </>

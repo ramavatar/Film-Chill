@@ -30,7 +30,7 @@ export default function Card(props) {
                      data.map(item => {
                         if (item.title == title) {
                            cout = cout + 1;
-                           alert("Already Added !")
+                           alert("Already Added to your favourites")
                         }
                      })
                     if(cout == 0){
@@ -41,12 +41,13 @@ export default function Card(props) {
                                 { "content-type": "application/json" },
                             body: JSON.stringify({ userName , overview , title , image , rating , voting })
                         },
-                        history.push("/favorites")
+                        // history.push("/favorites")
+                        alert("Added to your favourites")
                         )
                     }
-                    else{
-                        history.push("/favorites")
-                    }
+                    // else{
+                    //     history.push("/favorites")
+                    // }
                 })
             }
             else{
@@ -66,8 +67,8 @@ export default function Card(props) {
 
     return (
         <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <div className="card mt-3">
-                    <img src={props.image} className="card-img-top" onClick={displayDetails} style={{ height: '12rem' }} alt="No Image Found" />
+            <div className="card mt-4">
+                    <img src={props.image} className="card-img-top" onClick={displayDetails} style={{ height: '20rem' }} alt="No Image Found" />
                 <div className="card-body">
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">

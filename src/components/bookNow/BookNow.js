@@ -22,7 +22,7 @@ export default function BookNow() {
         <div className="bookNow">
             <p>JITNA BHI TRY KARO, KUCH NA KUCH TO CHOOTEGA HI.</p>
             <p>ISLIYE YAHI, ISSI PAL KA MAZA LETE HAI.</p>
-            <h1>Grap your Popcorn and be a little FILMY</h1>
+            <h1>Grap your Popcorn and let's be a little FILMY</h1>
             <h5>So, BOOK your tickets now</h5>
             <button type="button" class="btn btn-danger" onClick={back}>BOOK NOW</button>
         </div>
