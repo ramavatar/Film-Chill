@@ -41,7 +41,7 @@ export default class NavbarComp extends Component {
                                     <nav>
                                         <NavDropdown title={localStorage.getItem("token")}>
                                             <li className="nav-item">
-                                                <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color:'black' }}>Logout<i class="fa fa-sign-out fa-1x" style={{ paddingLeft: '10%' }}></i></a>
+                                                <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color: 'black' }}>Logout<i class="fa fa-sign-out fa-1x" style={{ paddingLeft: '10%' }}></i></a>
                                             </li>
                                         </NavDropdown>
                                     </nav>

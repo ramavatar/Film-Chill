@@ -11,6 +11,10 @@ import './App.css';
 import Details from './components/details/Details';
 import BookNow from './components/bookNow/BookNow';
 import Filter from './components/filter/Filter';
+import Book from './components/book/Book';
+import BookCarnivels from './components/bookCarnivels/BookCarnivels';
+import BookPVR from './components/bookPVR/BookPVR';
+
 function App() {
   return (
     <div>
@@ -24,6 +28,9 @@ function App() {
           <Route exact path="/bookNow" component={BookNow}/>
           <Route exact path="/" component={AboutUs} />
           <Route exact path="/filter" component={Filter} />
+          <Route exact path="/book" component={() => localStorage.getItem("token") ? <Book /> : <Redirect to="/login" />} />
+          <Route exact path="/bookPVR" component={() => localStorage.getItem("token") ? <BookPVR /> : <Redirect to="/login" />} />
+          <Route exact path="/bookCarnivels" component={() => localStorage.getItem("token") ? <BookCarnivels /> : <Redirect to="/login" />} />
           <Route exact path="/details" component={Details} />
           <Route exact path="/logout" component={() => localStorage.getItem("token") ? <Logout /> : <Redirect to="/login" />} />
         </Switch>

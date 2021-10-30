@@ -18,15 +18,21 @@ export default function BookNow() {
     return (
         <>
         <Header />
-        <div className="bg">
-        <div className="bookNow">
-            <p>JITNA BHI TRY KARO, KUCH NA KUCH TO CHOOTEGA HI.</p>
-            <p>ISLIYE YAHI, ISSI PAL KA MAZA LETE HAI.</p>
-            <h1>Grap your Popcorn and let's be a little FILMY</h1>
-            <h5>So, BOOK your tickets now</h5>
-            <button type="button" class="btn btn-danger" onClick={back}>BOOK NOW</button>
+        <div class="card bg-dark text-white">
+            <img src="https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/yeh-jawaani-hai-deewani-deepika-padukone-ranbir-kapoor_0.jpg" class="card-img" alt="..." />
+            <div class="card-img-overlay">
+                {/* <h5 class="card-title">Card title</h5> */}
+                <div>
+                    <b class="Jitna">JITNA BHI TRY KARO, KUCH NA KUCH TO CHHOOTEGA HI.</b>
+                    </div>
+                    <div>
+                    <b class="Jitna">ISLIYE YAHIN, ISS PAL KA MAZA LETE HAI.</b>
+                </div>
+                <h1 class="card-text">Grab your Popcorn and let's be a little FILMY</h1>
+                <h5 class="card-text">So, BOOK your tickets now</h5>
+                <button type="button" class="btn btn-danger" onClick={back}>BOOK NOW</button>
+            </div>
         </div>
-        </div>
-        </>
+    </>
     )
 }

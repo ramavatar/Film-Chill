@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Header from '../header/Header';
+
 export default function Details() {
     const [details, setdetails] = useState([])
     fetch("http://localhost:3001/details")
@@ -12,6 +13,11 @@ export default function Details() {
         .catch(err => {
             console.error(err);
         });
+
+        // const Book = (id) => {
+        //     history.push("/book")
+        //  }
+
     return (
         <>
             <Header />
@@ -35,7 +41,7 @@ export default function Details() {
                                             <span class="fa fa-star checked m-2" style={{ color: 'orange', paddingLeft: '15%' }}></span> {item.rating}
                                             <span className="fa fa-thumbs-o-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                         </p>
-                                        <button className="btn btn-warning m-2" >Book Movie</button>
+                                        <a className="btn btn-warning m-2" href="/book">Book Movie</a>
                                     </div>
                                 </div>
                             </>
