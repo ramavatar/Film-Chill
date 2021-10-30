@@ -22,7 +22,7 @@ export default function Dashboard() {
         <>
         <Header/>
         <div>
-            <div className="container-fluild" style={{paddingBottom:'4rem'}}>
+            <div className="container-fluild" style={{paddingBottom:'6rem'}}>
                 <div className="row">
                     {
                         movieApi.map(item => <Card key={item.id} title={item.original_title} image={IMG_URL + item.poster_path} release_date={item.release_date} overview={item.overview} rating={item.vote_average}  voting={item.vote_count} />)

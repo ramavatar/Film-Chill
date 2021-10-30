@@ -4,9 +4,13 @@
     margin-top: auto;
     position:fixed;
     text-align: center;
-    background-color: grey;
+    background-color:black;
     font-weight: bold;
     color: #fff;
     width: 100%;
     padding:10px;
+}
+
+.footer b{
+    font-size: 1.5em;
 }
