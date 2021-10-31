@@ -32,6 +32,7 @@ export default function Card(props) {
                         arr.push(item)
                         if(item.title == props.title){
                             setHeart(true)
+                            // alert("Already Added to Favourites")
                         }
                     }
                 })
@@ -48,8 +49,8 @@ export default function Card(props) {
                             { "content-type": "application/json" },
                         body: JSON.stringify({ key ,email, overview, title, image, rating, voting })
                     },
-                    // history.push("/favorites")
-                    alert("Added to favourites")
+                    history.push("/favorites")
+                    // alert("Added to favourites")
                 )
         }
         else {

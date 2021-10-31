@@ -1,5 +1,4 @@
-.bookNow {
-    margin:auto;
+/* .bookNow {
     bottom: 0;
     margin: 0%;
     text-align: center;
@@ -8,12 +7,9 @@
     position: relative;
     color: white;
 }
-.bookNow span{
-    background-color: brown;
-}
 
 .bg {
-    padding-top: 10%;
+    padding-top: 0%;
     margin-top: 0%;
     height: 80vh;
     background-position: center;
@@ -21,8 +17,41 @@
     background-size: cover;
     position: relative;
     background-image: url("https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/yeh-jawaani-hai-deewani-deepika-padukone-ranbir-kapoor_0.jpg")
+} */
+
+.card-img-overlay {
+    /* padding: 2%; */
+    /* margin: 10%; */
+    text-align: center;
+    /* padding:3px; */
+    /* position: relative; */
+    font-weight: bold;
+    color: white;
+    text-shadow: rosybrown;
+    /* text-decoration-line: underline; */
+}
+.card-img-overlay h1 {
+    /* padding: 2%; */
+    font-weight: bold;
+    /* color: rgb(226, 72, 98); */
+    color: white;
+    /* text-decoration-line: inherit; */
+    /* background-color: pink; */
+}
+.card-img-overlay h5 {
+    font-weight: bold;
+    color: purple;
+    text-decoration-line: inherit;
+    background-color: pink;
+}
+.Jitna {
+    background-color: blueviolet;
+    font-size: 20px;
 }
 
-.booknow h1{
-    color: darkgreen;
+.card img {
+    height: 100vh;
+}
+.pop {
+    padding-bottom: 20%;
 }
