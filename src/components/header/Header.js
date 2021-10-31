@@ -7,7 +7,7 @@ import './Header.css';
 export default class NavbarComp extends Component {
     render() {
         return (
-            <nav id="nav" className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav id="nav" className="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
                 <div className="container-fluid">
                     <img src={logo} width="70" height="60" class="d-inline-block align-top" alt="logo" />
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,9 +18,6 @@ export default class NavbarComp extends Component {
                             <li className="nav-item">
                                 <a href="/movies" className="nav-link" aria-current="page">Movies</a>
                             </li>
-                            {/* <li className="nav-item">
-                                <a href="/bookNow" className="nav-link" aria-current="page">BookNow</a>
-                            </li> */}
                             {
                                 localStorage.getItem("token") ?
                                     <li className="nav-item">
@@ -35,19 +32,23 @@ export default class NavbarComp extends Component {
                                 <a href="/" className="nav-link" aria-current="page">AboutUs</a>
                             </li>
                         </ul>
-                        <ul className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ml-auto mr-4">
                             {
                                 localStorage.getItem("token") ?
                                     <nav>
-                                        <NavDropdown title={localStorage.getItem("token")}>
-                                            <li className="nav-item">
-                                                <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color:'black' }}>Logout<i class="fa fa-sign-out fa-1x" style={{ paddingLeft: '10%' }}></i></a>
+                                        <NavDropdown title={localStorage.getItem("token")} >
+                                            <li className="nav-item" style={{width:'120%'}}>
+                                                <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color:'black' }}>Logout<i class='fas fa-sign-in-alt' style={{ paddingLeft: '10%' }}></i></a>
+                                            </li>
+                                            <hr/>
+                                            <li className="nav-item" style={{width:'120%'}}>
+                                                <a href="/remove" style={{ textDecoration: 'none' , paddingLeft: '10%', color:'black' }}>Remove<i class='fas fa-trash-alt' style={{ paddingLeft: '10%' }}></i></a>
                                             </li>
                                         </NavDropdown>
                                     </nav>
                                     :
                                     <li className="nav-item">
-                                        <a href="/login" className="btn btn-success">Login</a>
+                                        <a href="/login" className="btn btn-outline-success">Login</a>
                                     </li>
                             }
                         </ul>

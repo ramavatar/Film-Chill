@@ -9,7 +9,7 @@ export default function Register() {
    const [password, setPassword] = useState('')
    const [confirmPassword, setConfirmPassword] = useState('')
 
-   const RegisterHandeller = () => {
+   const PasswordHandeller = () => {
       var cout = 0;
       if (username == "") {
          document.getElementById("msg").innerHTML = "UserName Can't be Empty";
@@ -34,28 +34,29 @@ export default function Register() {
                   data.map(item => {
                      if (item.email === email) {
                         cout = cout + 1;
+                        fetch(`http://localhost:3001/Register/${item.id}`, {
+                            method: "PUT",
+                            headers: {
+                               "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ username, email, password }),
+                         })
+                            .then((res) => {
+                               return res.json();
+                            })
+                            .then((data) => {
+                               console.log(data);
+                            });
                      }
                   })
                   if (cout == 0) {
-                     fetch("http://localhost:3001/Register", {
-                        method: "POST",
-                        headers: {
-                           "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({ username, email, password }),
-                     })
-                        .then((res) => {
-                           return res.json();
-                        })
-                        .then((data) => {
-                           console.log(data);
-                        });
-                     history.push("/login")
+                    document.getElementById("msg").innerHTML = "Not a Registered User !";
                   }
                   else {
-                     document.getElementById("msg").innerHTML = "Already Registered !";
+                    document.getElementById("msg").innerHTML = "Password Updated Successfully !";
                   }
                })
+                  
          }
          else {
             document.getElementById("msg").innerHTML = "password and Confirm Password not Matched";
@@ -68,10 +69,10 @@ export default function Register() {
          <div className="container-fluid">
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">
-                  <img src="https://www.iitg.ac.in/vigyanjyoti/images/regd.png" style={{width:'100%'}}/>
+                  <img src="https://www.ouinolanguages.com/new/wp-content/uploads/2017/09/ques15.jpg" style={{width:'100%'}}/>
                </div>
                <div className="col-sm-12 md-6 col-lg-5">
-                  <h1 className="mb-2 mt-2">Register</h1>
+                  <h1 className="mb-2 mt-4">Reset Password</h1>
                   <hr />
                   <div className="mb-2" id="msg" style={{ color: 'red' }}>
 
@@ -88,16 +89,13 @@ export default function Register() {
                      <label>Password</label>
                      <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                   </div>
-                  <div className="mb-2">
+                  <div className="mb-4">
                      <label>Re-Enter Password</label>
                      <input type="password" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
                   </div>
                   <div className="mb-2">
-                     <button className="btn btn-warning col-12" onClick={RegisterHandeller}>SignUp</button>
+                      <button className="btn btn-info col-12" onClick={PasswordHandeller}>Reset Password</button>
                   </div>
-                  <a href="/login" className="mb-2">
-                     <button className="btn btn-danger col-12" >SignIn</button>
-                  </a>
                </div>
             </div>
          </div>

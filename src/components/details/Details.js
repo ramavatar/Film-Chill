@@ -21,9 +21,9 @@ export default function Details() {
                         details.map(item => (
                             <>
                                 <div className="card m-4" style={{ flexDirection: 'row' }}>
-                                    <img src={item.image} className="card-img-top" style={{ width: "40%", height: "70vh" }} alt="No Image Found" />
+                                    <img src={item.image} className="card-img-top" style={{ width: "80%", height: "70vh" }} alt="No Image Found" />
                                     <div className="card-body">
-                                        <h5 className="card-title">{item.title}</h5>
+                                        <h4 className="card-title">{item.title}</h4>
                                         <p className="card-text">
                                             {item.overview}
                                         </p>
@@ -33,7 +33,7 @@ export default function Details() {
                                                 <span class="fa fa-heart-o m-2" style={{ color: 'red', paddingLeft: '15%' }} ></span>
                                             </a>
                                             <span class="fa fa-star checked m-2" style={{ color: 'orange', paddingLeft: '15%' }}></span> {item.rating}
-                                            <span className="fa fa-thumbs-o-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
+                                            <span className="fas fa-thumbs-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                         </p>
                                         <button className="btn btn-warning m-2" >Book Movie</button>
                                     </div>

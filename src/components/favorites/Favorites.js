@@ -13,7 +13,7 @@ export default function FavoritesMovies() {
         .then(res => res.json())
         .then(data => {
             data.map(item => {
-                if (localStorage.getItem("token") == item.userName) {
+                if (localStorage.getItem("token") == item.email) {
                     arr.push(item)
                     cout = cout + 1
                 }
@@ -54,10 +54,9 @@ export default function FavoritesMovies() {
                                         </a>
                                         <span class="fa fa-star checked m-2" style={{ color: 'orange', paddingLeft: '12%' }}></span>
                                         {item.rating}
-                                        <span className="fa fa-thumbs-o-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
+                                        <span className="fas fa-thumbs-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                     </p>
-                                    <button data-testid="btnReadLater" className="btn btn-warning m-2 align-bottom">Book Movie</button>
-                                    <button data-testid="btnDealete" className="btn btn-warning m-2 align-bottom">Delete</button>
+                                    <a href="/book" className="btn btn-warning m-2 align-bottom">Book Movie</a>
                                 </div>
                             </div>
                         </div>
