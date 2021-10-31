@@ -29,6 +29,9 @@ function App() {
           <Route exact path="/" component={AboutUs} />
           <Route exact path="/password" component={forgetPassword} />
           <Route exact path="/filter" component={Filter} />
+          <Route exact path="/book" component={() => localStorage.getItem("token") ? <Book /> : <Redirect to="/login" />} />
+          <Route exact path="/bookPVR" component={() => localStorage.getItem("token") ? <BookPVR /> : <Redirect to="/login" />} />
+          <Route exact path="/bookCarnivels" component={() => localStorage.getItem("token") ? <BookCarnivels /> : <Redirect to="/login" />} />
           <Route exact path="/details" component={Details} />
           <Route exact path="/logout" component={() => localStorage.getItem("token") ? <Logout /> : <Redirect to="/login" />} />
           <Route exact path="/remove" component={() => localStorage.getItem("token") ? <RemoveAccount/> : <Redirect to="/login" />} />

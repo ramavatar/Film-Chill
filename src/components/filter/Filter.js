@@ -23,7 +23,7 @@ export default function Filter() {
         history.push("/movies");
     }
 
-    const displaymovie = (value) => {
+    const displaymovie = () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=04c35731a5ee918f014970082a0088b1&page=1`)
             .then(response => response.json())
             .then(data => {

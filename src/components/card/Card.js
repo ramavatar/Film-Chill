@@ -48,7 +48,8 @@ export default function Card(props) {
                             { "content-type": "application/json" },
                         body: JSON.stringify({ key ,email, overview, title, image, rating, voting })
                     },
-                    history.push("/favorites")
+                    // history.push("/favorites")
+                    alert("Added to favourites")
                 )
         }
         else {
