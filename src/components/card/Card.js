@@ -32,6 +32,7 @@ export default function Card(props) {
                         arr.push(item)
                         if(item.title == props.title){
                             setHeart(true)
+                            // alert("Already Added to Favourites")
                         }
                     }
                 })

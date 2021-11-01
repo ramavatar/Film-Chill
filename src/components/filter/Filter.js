@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { Button, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { Button, Modal } from 'react-bootstrap';
 import { Menu, MenuItem, MenuButton, SubMenu } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
@@ -85,7 +85,6 @@ export default function Filter() {
             <div className="container-fluid" style={{ paddingBottom: "4em" }}>
                 <div className="row">
                     {
-                        <h1>hello</h1>,
                         card.map(item => <Card title={item.original_title} image={IMG_URL + item.poster_path} release_date={item.release_date} overview={item.overview} rating={item.vote_average} voting={item.vote_count} />)
                     }
                 </div>

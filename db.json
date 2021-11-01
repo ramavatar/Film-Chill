@@ -489,8 +489,9 @@
       "id": 4
     },
     {
-      "seat": 5,
-      "isBooked": false,
+      "email": "ram@gmail.com",
+      "Key": "228326",
+      "isBooked": true,
       "id": 5
     },
     {
@@ -1571,15 +1572,6 @@
       "id": 2
     },
     {
-      "email": "ram@gmail.com",
-      "overview": "The Sequel to the Ford brothers The Dead. The action moves to India.",
-      "title": "The Dead 2: India",
-      "image": "https://image.tmdb.org/t/p/w500/dEFMImTFeGpW0h75Xj7wya3ELaS.jpg",
-      "rating": 5.3,
-      "voting": 41,
-      "id": 3
-    },
-    {
       "key": 228150,
       "email": "kirti@globallogic.com",
       "overview": "In the last months of World War II, as the Allies make their final push in the European theatre, a battle-hardened U.S. Army sergeant named 'Wardaddy' commands a Sherman tank called 'Fury' and its five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
@@ -1599,24 +1591,23 @@
       "id": 5
     },
     {
-      "key": 228150,
+      "key": 228326,
       "email": "ram@gmail.com",
-      "overview": "In the last months of World War II, as the Allies make their final push in the European theatre, a battle-hardened U.S. Army sergeant named 'Wardaddy' commands a Sherman tank called 'Fury' and its five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-      "title": "Fury",
-      "image": "https://image.tmdb.org/t/p/w500/q7kgbEjx2BHUDErfU7lH8UqS51R.jpg",
+      "overview": "The journey of Manolo, a young man who is torn between fulfilling the expectations of his family and following his heart. Before choosing which path to follow, he embarks on an incredible adventure that spans three fantastical worlds where he must face his greatest fears.",
+      "title": "The Book of Life",
+      "image": "https://image.tmdb.org/t/p/w500/puTDvsUADxCA5NjJuwgEWqQ3xGA.jpg",
       "rating": 7.5,
-      "voting": 9410,
-      "id": 6
+      "voting": 2019,
+      "id": 8
     },
     {
-      "key": 277547,
-      "email": "ram@gmail.com",
-      "overview": "A young man meets and instantly falls in love with an engaged woman.",
-      "title": "Playing It Cool",
-      "image": "https://image.tmdb.org/t/p/w500/96htqghZlKctNJqDLo2DuC9PEap.jpg",
-      "rating": 5.9,
-      "voting": 605,
-      "id": 7
+      "email": "kirti@globallogic.com",
+      "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+      "title": "Dune",
+      "image": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+      "rating": 8,
+      "voting": 3076,
+      "id": 9
     }
   ]
 }

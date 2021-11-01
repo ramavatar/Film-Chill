@@ -12,7 +12,6 @@ export default function Details() {
         fetch(`http://localhost:3001/${id}`)
         .then(res => res.json())
         .then(data => {
-            alert(id)
             setdetails(data)
         })
         .catch(err => {
