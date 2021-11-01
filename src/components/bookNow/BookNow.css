@@ -1,28 +1,26 @@
-.bookNow {
-    margin:auto;
-    bottom: 0;
-    margin: 0%;
+.card-img-overlay {
     text-align: center;
     font-weight: bold;
-    padding:10px;
-    position: relative;
+    text-shadow: rosybrown;
+}
+.card-img-overlay h1 {
+    font-weight: bold;
     color: white;
 }
-.bookNow span{
-    background-color: brown;
+.card-img-overlay span {
+    font-weight: bolder;
+    font-size: 3em;
+    color: black;
+    background-color: blue;
+    text-decoration-line: inherit;
 }
-
-.bg {
-    padding-top: 10%;
-    margin-top: 0%;
+.Jitna {
+    background-color: blueviolet;
+    font-size: 20px;
+}
+.bookNow img {
     height: 80vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    background-image: url("https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/yeh-jawaani-hai-deewani-deepika-padukone-ranbir-kapoor_0.jpg")
 }
-
-.booknow h1{
-    color: darkgreen;
+.pop {
+    padding-bottom: 20%;
 }

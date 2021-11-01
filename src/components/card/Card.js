@@ -48,8 +48,8 @@ export default function Card(props) {
                             { "content-type": "application/json" },
                         body: JSON.stringify({ key ,email, overview, title, image, rating, voting })
                     },
-                    // history.push("/favorites")
-                    alert("Added to favourites")
+                    history.push("/favorites")
+                    // alert("Added to favourites")
                 )
         }
         else {
@@ -57,20 +57,17 @@ export default function Card(props) {
         }
     }
 
-    const displayDetails = () => {
-        fetch("http://localhost:3001/details/1",
-            {
-                "method": "PUT",
-                headers: { "content-type": "application/json" },
-                body: JSON.stringify({ overview, title, image, releaseDate, rating, voting })
-            })
-        history.push("/details")
+    const displayDetails = (id) => {
+        if(id!=undefined){
+            history.push(`/details/${id}`)
+        }
+
     }
 
     return (
-        <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div className="conainer-fluid col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div className="card mt-3">
-                <img src={props.image} className="card-img-top" onClick={displayDetails} style={{ height: '14rem' }} alt="No Image Found" />
+                <img src={props.image} className="card-img-top" onClick={displayDetails.bind(this,props.id)} style={{ height: '14rem' }} alt="No Image Found" />
                 <div className="card-body">
                     <h6 className="card-title">{props.title}</h6>
                     <p className="card-text">
@@ -84,7 +81,7 @@ export default function Card(props) {
                                 <span class="fas fa-heart m-2" style={{ color:'black' ,float: 'left' }} onClick={addFavorites}></span>
                             </a>
                     }
-                        <span class="fa fa-star checked m-2" style={{ color: 'orange', paddingLeft: '25%' }}></span>
+                        <span class="fa fa-star checked m-2" style={{ color: 'orange' , paddingLeft: '10%' }}></span>
                         {props.rating}
                         <span className="fa fa-thumbs-up m-2" style={{ float: 'right' }}> {props.voting} Votes</span>
                     </p>

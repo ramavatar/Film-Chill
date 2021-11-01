@@ -47,12 +47,12 @@ export default function Login() {
                   <h1 className="mb-4 mt-4">Login</h1>
                   <p id="invalid" style={{ color: 'red' }}></p>
                   <div className="mb-4">
-                     <label>UserName</label>
-                     <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="UserName" />
+                     <label>e-mail</label>
+                     <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="fill@chill.com" />
                   </div>
                   <div className="mb-4">
                   <label>Password</label>
-                     <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="Password" />
+                     <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="********" />
                   </div>
                   <div className="mb-2">
                      <button id="buttonLogin" onClick={LoginHandeller} className="btn btn-info col-12" >SignIn</button>

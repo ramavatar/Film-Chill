@@ -1,11 +1,13 @@
-.container-fluild {
+#filter {
     background-image: url("https://i0.wp.com/sreditingzone.com/wp-content/uploads/2018/03/movie-poster-background-4.jpg?resize=692%2C1024&ssl=1");
     border-left: 0%;
     padding: 0% 2%;
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
+    /* filter: blur(8px); */
+    /* -webkit-filter: blur(8px); */
 }

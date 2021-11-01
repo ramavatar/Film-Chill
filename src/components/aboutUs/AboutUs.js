@@ -1,37 +1,46 @@
 import React from 'react';
 import Header from '../header/Header';
-import './AboutUs.css'
-
-
+import './AboutUs.css';
+import kirti from '../assets/bg.jpeg';
 export default function AboutUs() {
     return (
         <>
             <Header />
-            <div className="aboutUs" style={{paddingBottom:'4em'}}>
-                <div className="container-fluid">
-                    <h1 className="mb-4">About Us</h1>
-                    <div class="card bg-dark text-white">
-                        <img src="https://www.teahub.io/photos/full/41-416478_classic-horror-movies-wallpapers-hd-horror-movie-collage.jpg" class="card-img" alt="..."/>
-                        <div class ="card-img-overlay">
-                            {/* <b className="decor"> */}
-                        <h1 class ="card-title">Film & Chill</h1>
-                        <h4 class ="card-text">WE ARE</h4>
-                        <h1 class ="card-text">MOVIE BUFFS</h1>
-                        <h4 class ="card-text">We specialize in Providing Best user Experience</h4>
-                        {/* </b> */}
+            <div class="about-section">
+                <h1>About Us Page</h1>
+                <p>We Specialize in Providing Best User Experience</p>
+            </div>
+
+            <h2>Our Team</h2>
+
+            <div className="container" style={{paddingBottom:'4rem'}}>
+                <div className="row">
+                    <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-4" >
+                        <img src={kirti} class="card-img-top" alt="..."  style={{height:'10rem'}}/>
+                        <div class="card-body">
+                            <h5 class="card-title">Kirti Yadav</h5>
+                            <p class="card-text">React JS Developer</p>
+                            <a href = "mailto: kirti.yadav2@globallogic.com" class="btn btn-primary">Connect</a>
                         </div>
                     </div>
-                    <div class="jumbotron text-center">
-                        <h2>Connect with us</h2>
-                        <section>
-                            <span className="fa fa-facebook fa-5x m-5" style={{ color: 'blue' }}></span>
-                            <span className="fa fa-gitlab fa-5x m-5" style={{ color: 'gold' }}></span>
-                            <span className="fa fa-youtube fa-5x m-5" style={{ color: 'red' }}></span>
-                        </section>
+                    <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <img src={kirti} class="card-img-top" alt="..." style={{height:'10rem'}}/>
+                        <div class="card-body">
+                            <h5 class="card-title">Ram Upadhyay</h5>
+                            <p class="card-text">React JS Developer</p>
+                            <a href = "mailto: ram.upadhyay@globallogic.com" class="btn btn-primary">Connect</a>
+                        </div>
+                    </div>
+                    <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <img src={kirti} class="card-img-top" alt="..." style={{height:'10rem'}}/>
+                        <div class="card-body">
+                            <h5 class="card-title">Global Logic</h5>
+                            <p class="card-text">A Hitachi Group Company</p>
+                            <a href = "mailto: info@globallogic.com" class="btn btn-primary">Connect</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </>
     )
 }
-

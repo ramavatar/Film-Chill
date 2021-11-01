@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { NavDropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 import './Header.css';
 
