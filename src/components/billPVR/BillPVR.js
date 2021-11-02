@@ -25,19 +25,24 @@ export default function BillPVR() {
     return (
         <div>
             <Header />
-            <div class="container d-flex justify-content-center mt-3">
+            <div class="container d-flex justify-content-center mt-2">
                 <div class="card border-success">
-                    <div class="card-header bg-transparent border-success">PVR Booking</div>
-                    <div class="card-body text-success">
+                    <div class="card-header bg-success border-success">
+                        <center><b style={{color:'white'}}>PVR Booking</b></center>
+                    </div>
+                    <div class="card-body text-primary">
                         <h5 class="card-title">Movie Title : {title}</h5>
-                        <p class="card-text">Seat No: {seat}</p>
-                        <p class="card-text">Timing: 10:00 AM</p>
-                        <p class="card-text">Amount: Rs 150</p>
+                        <div class="card-text">Movie Id : {id}</div>
+                        <div class="card-text">Seat No : {seat}</div>
+                        <div class="card-text">Timing :  10:00 AM</div>
+                        <div class="card-text">Amount : Rs 150</div>
                         
-                        <div class="card">
+                        <div class="card bg-info mt-2">
                             <div class="first p-3 px-4">
-                                <div class="d-flex align-items-center"> <img src="https://www.apkmonk.com/share/qr/com.net.pvr/" width="50" class="mr-3" /> <img src="https://i.imgur.com/lhlX7sC.gif" width="180" class="mt-2" /> </div>
-                                <div class=" d-flex flex-row justify-content-between mt-3">
+                                <div class="d-flex align-items-center"> <img src="https://www.apkmonk.com/share/qr/com.net.pvr/" width="50" class="mr-3" /> 
+                                    <img src="https://i.imgur.com/lhlX7sC.gif" width="180" class="mt-2" /> 
+                                </div>
+                                <div class=" d-flex flex-row justify-content-between text-dark mt-3">
                                     <div class="star"> <span>*</span> <span>*</span> <span>*</span> <span>*</span> </div>
                                     <div class="star"> <span>*</span> <span>*</span> <span>*</span> <span>*</span> </div>
                                     <div class="star"> <span>*</span> <span>*</span> <span>*</span> <span>*</span> </div>
@@ -56,7 +61,11 @@ export default function BillPVR() {
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer bg-transparent border-success">Thankyou for Visiting</div>
+                    <div class="card-footer bg-success border-success mb-2">
+                    <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
+                        <b style={{paddingLeft:'8%' , color:'white'}}>Thank You for Visiting</b>
+                    <span class="fa fa-heart m-2" style={{ color: 'red', float: 'right' }} ></span>
+                    </div>
                 </div>
             </div>
         </div>

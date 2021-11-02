@@ -65,14 +65,13 @@ export default function Register() {
    return (
       <>
          <Header />
-         <div className="container-fluid">
+         <div className="container-fluid" style={{paddingBottom:'1rem'}}>
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">
                   <img src="https://www.iitg.ac.in/vigyanjyoti/images/regd.png" style={{width:'100%'}}/>
                </div>
                <div className="col-sm-12 md-6 col-lg-5">
-                  <h1 className="mb-2 mt-2">Register</h1>
-                  <hr />
+                  <h1 className="mb-4 mt-4">Register</h1>
                   <div className="mb-2" id="msg" style={{ color: 'red' }}>
 
                   </div>
@@ -88,16 +87,13 @@ export default function Register() {
                      <label>Password</label>
                      <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                   </div>
-                  <div className="mb-2">
+                  <div className="mb-4">
                      <label>Re-Enter Password</label>
                      <input type="password" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
                   </div>
                   <div className="mb-2">
-                     <button className="btn btn-warning col-12" onClick={RegisterHandeller}>SignUp</button>
+                     <button className="btn btn-warning col-12" onClick={RegisterHandeller}><b>SignUp</b></button>
                   </div>
-                  <a href="/login" className="mb-2">
-                     <button className="btn btn-danger col-12" >SignIn</button>
-                  </a>
                </div>
             </div>
          </div>

@@ -24,7 +24,7 @@ export default function Details() {
     }, [])
 
     const Book = (id) => {
-        history.push(`/bookPVR/${id}`)
+        history.push(`/book/${id}`)
      }
 
     return (
@@ -45,7 +45,7 @@ export default function Details() {
                                     <span class="fa fa-heart-o m-2" style={{ color: 'red', paddingLeft: '15%' }} ></span>
                                 </a>
                                 <span class="fa fa-star checked m-2" style={{ color: 'orange', paddingLeft: '15%' }}></span> {details.vote_average}
-                                <span className="fas fa-thumbs-up m-2" style={{ float: 'right' }}> {details.vote_count} Votes</span>
+                                <span className="fa fa-thumbs-up m-2" style={{ float: 'right' }}> {details.vote_count} Votes</span>
                             </p>
                             <a className="btn btn-warning m-2" onClick={Book.bind(this,details.id)}>Book Movie</a>
                         </div>

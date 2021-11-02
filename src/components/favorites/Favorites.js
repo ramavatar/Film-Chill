@@ -47,7 +47,7 @@ export default function FavoritesMovies() {
     return (
         <>
             <Header />
-            <div id="favorites" className="container-fluid" style={{ paddingBottom: "6em" }}>
+            <div id="favorites" className="container-fluid" style={{ paddingBottom: "2em" }}>
                 <div className="row">
                     {
                         allFavoritesMovies.map(item => (
@@ -62,7 +62,7 @@ export default function FavoritesMovies() {
                                             </a>
                                             <span class="fa fa-star checked m-2" style={{ color: 'orange', paddingLeft: '12%' }}></span>
                                             {item.rating}
-                                            <span className="fas fa-thumbs-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
+                                            <span className="fa fa-thumbs-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                         </p>
                                         <button data-testid="btnReadLater" className="btn btn-warning m-2 align-bottom" onClick={Book.bind(this,item.key)}>Book Movie</button>
                                     </div>

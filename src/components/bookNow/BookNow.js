@@ -2,7 +2,6 @@ import React from 'react'
 import Header from '../header/Header';
 import './BookNow.css'
 import { useHistory } from 'react-router-dom';
-import Movies from '../movies/Movies';
 export default function BookNow() {
     const history = useHistory()
     const back = () => {

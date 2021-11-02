@@ -36,12 +36,12 @@ export default class NavbarComp extends Component {
                                 localStorage.getItem("token") ?
                                     <nav>
                                         <NavDropdown title={localStorage.getItem("token")} >
-                                            <li className="nav-item" style={{width:'120%'}}>
-                                                <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color:'black' }}>Logout<i class='fas fa-sign-in-alt' style={{ paddingLeft: '10%' }}></i></a>
+                                            <li className="nav-item" style={{ width: '120%' }}>
+                                                <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color: 'black' }}>Logout<i class='fa fa-sign-in' style={{ paddingLeft: '10%' }}></i></a>
                                             </li>
-                                            <hr/>
-                                            <li className="nav-item" style={{width:'120%'}}>
-                                                <a href="/remove" style={{ textDecoration: 'none' , paddingLeft: '10%', color:'black' }}>Remove<i class='fas fa-trash-alt' style={{ paddingLeft: '10%' }}></i></a>
+                                            <hr />
+                                            <li className="nav-item" style={{ width: '120%' }}>
+                                                <a href="/remove" style={{ textDecoration: 'none', paddingLeft: '10%', color: 'black' }}>Remove<i class='fa fa-trash-o' style={{ paddingLeft: '10%' }}></i></a>
                                             </li>
                                         </NavDropdown>
                                     </nav>
@@ -57,3 +57,4 @@ export default class NavbarComp extends Component {
         )
     }
 }
+

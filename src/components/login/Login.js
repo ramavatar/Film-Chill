@@ -38,13 +38,13 @@ export default function Login() {
    return (
       <>
          <Header />
-         <div className="container mt-4">
+         <div className="container mt-4" style={{paddingBottom:'2rem'}}>
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">
                   <img src="https://ck12live.s3.ap-south-1.amazonaws.com/user/5f688627ac992228651c21b1/classroom/original/1607234971537-login.png" alt="No image found" style={{width:'100%'}} />
                </div>
                <div className="col-sm-12 md-6 col-lg-5"> 
-                  <h1 className="mb-4 mt-4">Login</h1>
+                  <h1 className="mt-2">Login</h1>
                   <p id="invalid" style={{ color: 'red' }}></p>
                   <div className="mb-4">
                      <label>e-mail</label>
@@ -55,14 +55,17 @@ export default function Login() {
                      <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="********" />
                   </div>
                   <div className="mb-2">
-                     <button id="buttonLogin" onClick={LoginHandeller} className="btn btn-info col-12" >SignIn</button>
+                     <button id="buttonLogin" onClick={LoginHandeller} className="btn btn-info col-12" ><b>SignIn</b></button>
                   </div>
+                  <center>
+                  <div className="">
+                     <a style={{ textDecoration: 'none' }} href="/password"><b>Forgotten Password ?</b></a>
+                  </div>
+                  </center>
+                  <hr/>
                   <a  href="/register" className="mb-4">
-                     <button id="buttonLogin" className="btn btn-primary col-12" >SignUp</button>
+                     <button className="btn btn-success col-12" ><b>Create New Account</b></button>
                   </a>
-                  <div className="mt-4">
-                     <a className="m-4" style={{ textDecoration: 'none' }} href="/password">Forget Password</a>
-                  </div>
                </div>
             </div>
          </div>

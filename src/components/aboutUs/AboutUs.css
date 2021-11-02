@@ -13,10 +13,12 @@ body {
   
   
   .about-section {
-    padding:10px;
+    padding:25px;
     text-align: center;
     background-color: #474e5d;
     color: white;
+    box-shadow: 5px 5px 25px rgb(184, 16, 16);
+    transition:transform 1s ease-out ;
   }
   
   h1{
@@ -25,6 +27,8 @@ body {
 }
 
   h2{
+      margin: 23px;
+      color: blueviolet;
       text-align: center;
       font-weight: bolder;
       font-size: 3em;

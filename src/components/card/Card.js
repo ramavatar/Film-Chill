@@ -66,25 +66,24 @@ export default function Card(props) {
     }
 
     return (
-        <div className="conainer-fluid col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="card mt-3">
-                <img src={props.image} className="card-img-top" onClick={displayDetails.bind(this,props.id)} style={{ height: '14rem' }} alt="No Image Found" />
+        <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{marginTop:'2%'}} >
+            <div className="card m-2">
+                <img src={props.image} className="card-img-top" onClick={displayDetails.bind(this,props.id)} style={{ height: '13rem' }} alt="No Image Found" />
                 <div className="card-body">
                     <h6 className="card-title">{props.title}</h6>
                     <p className="card-text">
                     {
                         heart ?
                             <a If href="#">
-                                <span class="fas fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
+                                <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
                             </a>
                             :
                             <a If href="#">
-                                <span class="fas fa-heart m-2" style={{ color:'black' ,float: 'left' }} onClick={addFavorites}></span>
+                                <span class="fa fa-heart-o m-2" style={{ color: 'red', float: 'left' }} onClick={addFavorites}></span>
                             </a>
                     }
-                        <span class="fa fa-star checked m-2" style={{ color: 'orange' , paddingLeft: '10%' }}></span>
-                        {props.rating}
-                        <span className="fa fa-thumbs-up m-2" style={{ float: 'right' }}> {props.voting} Votes</span>
+                        <span class="fa fa-star checked m-2" style={{ color: 'orange' }}></span>{props.rating}
+                        <span className="fa fa-thumbs-up m-2" style={{float: 'right'}}> {props.voting} Votes</span>
                     </p>
                 </div>
             </div>

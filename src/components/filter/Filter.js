@@ -69,7 +69,7 @@ export default function Filter() {
         <div id="filter">
             <Header />
             <Modal show={show} onHide={handleModal}>
-                <Modal.Header closeButton>Filter movie to read</Modal.Header>
+                <Modal.Header closeButton>Filter movie </Modal.Header>
                 <Modal.Body>
                     <Menu menuButton={<MenuButton className="btn btn-success">Choose Filter...</MenuButton>}>
                         <MenuItem onClick={() => displayPopular('')}>Popular Movies</MenuItem>
@@ -82,7 +82,7 @@ export default function Filter() {
                     </Menu>
                 </Modal.Body>
             </Modal>
-            <div className="container-fluid" style={{ paddingBottom: "4em" }}>
+            <div className="container-fluid" style={{ paddingBottom: "6em" }}>
                 <div className="row">
                     {
                         card.map(item => <Card title={item.original_title} image={IMG_URL + item.poster_path} release_date={item.release_date} overview={item.overview} rating={item.vote_average} voting={item.vote_count} />)

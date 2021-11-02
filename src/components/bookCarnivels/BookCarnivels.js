@@ -9,21 +9,23 @@ function RenderComponent() {
         setAvailable(false)
     }
 
-    const list = [] ;
+    const seat = [] ;
     for (let i = 0; i < 25 ; i = i + 1) {
         if (available) {
-            list.push(<i class="fas fa-couch fa-10x m-2" onclick={{bookTicket}} style={{ color: 'green' }}></i>)
-            
+            seat.push(true)
         }
         else {
-            list.push(<i class="fas fa-couch fa-10x m-2" style={{ color: 'red' }}></i>)
+            seat.push(false)
         }
     }
     return (
         <div style={{paddingBottom:'4rem'}}> 
             <Header/>
             <div className="container">
-                {list}
+            {seat.map(item=>{
+               <li>{item}</li>
+            })}
+                
             </div>
         </div>
     )
