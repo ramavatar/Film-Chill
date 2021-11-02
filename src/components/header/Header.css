@@ -1,15 +1,53 @@
 
-#nav{
-    background-image: url("https://1r65612jvqxn8fcup46pve6b-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/grf-bg.jpg");
+#nav1 {
+    background-color: rgb(34,37,57);
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    /* padding-top: 0%; */
-    
 }
 
-#nav a{
+#nav1 a{
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 0.8em;
     color: white;
+}
+.navbar-brand {
+    font-size: 2rem;
+    color: black;
+}
+.nav-link {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;
+}
+.nav-link:hover {
+    color: black;
+}
+.search {
+    height: 35px;
+    width: 100%;
+    border-radius: 60px;
+    outline: indigo;
+    margin-right: -35px;
+}
+.btn0 {
+    height: 35px;
+    width: 60%;
+    outline: none;
+    border: none;
+    background-color: purple;
+    color: black;
+    font-weight: 700;
+    border-radius: 60px;
+}
+.btn0:hover {
+    background-color: pink;
+}
+.item {
+    position: relative;
+    display: none;
+    -webkit-transition: 0.2s ease-in-out left;
+    -moz-transition: 0.2s ease-in-out left;
+    -o-transition: 0.2s ease-in-out left;
+    transition: 0.2s ease-in-out left;
 }

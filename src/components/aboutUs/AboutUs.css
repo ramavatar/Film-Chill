@@ -15,7 +15,7 @@ body {
   .about-section {
     padding:25px;
     text-align: center;
-    background-color: #474e5d;
+    background-color: rgb(21, 21, 49);
     color: white;
     box-shadow: 5px 5px 25px rgb(184, 16, 16);
     transition:transform 1s ease-out ;

@@ -12,11 +12,11 @@
     font-weight: bolder;
     font-size: 3em;
     color: black;
-    background-color: blue;
+    /* background-color: blue; */
     text-decoration-line: inherit;
 }
 .Jitna {
-    background-color: blueviolet;
+    background-color: rgb(119, 29, 202);
     font-size: 22px;
 }
 .bookNow img {

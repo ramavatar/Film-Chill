@@ -39,21 +39,14 @@ export default function Search() {
 
         <div>
             <Header />
-            <Modal show={show} onHide={handleModal}>
-                {/* <Modal.Header closeButton>Filter movie to read</Modal.Header> */}
-                <Modal.Body>
-                    {/* <Menu menuButton={<MenuButton className="btn btn-success">Choose Filter...</MenuButton>}> */}
-                    <div>
-                        <input type="text" onChange={(e) => { setsearch(e.target.value) }} className="form-control" placeholder="Search News" />
-                        <button className="btn btn-success btn-sm-mt-2 col-4" onClick={searchNews}>Search</button>
-                    </div>
-                    {/* </Menu> */}
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={handleModal} className="btn btn-danger">Close</Button>
-                </Modal.Footer>
-            </Modal>
 
+
+            {/* <input class="px-2 search" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn0" type="submit">Search</button> */}
+            <form class="d-flex">
+                <input type="text" onChange={(e) => { setsearch(e.target.value) }} className="form-control" placeholder="Search News" />
+                <button className="btn btn-success col-12 mt-2 col-4" onClick={searchNews}>Search</button>
+            </form>
             <div className="container" style={{ paddingBottom: "4em" }}>
                 <div className="row">
                     {

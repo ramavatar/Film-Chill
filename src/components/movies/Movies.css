@@ -1,11 +1,26 @@
 .container-fluild {
-    background-image: url("https://i0.wp.com/sreditingzone.com/wp-content/uploads/2018/03/movie-poster-background-4.jpg?resize=692%2C1024&ssl=1");
+    /* background-image: url("https://i0.wp.com/sreditingzone.com/wp-content/uploads/2018/03/movie-poster-background-4.jpg?resize=692%2C1024&ssl=1"); */
     border-left: 0%;
-    padding: 0% 2%;
+    padding: 0%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     width: 100%;
     height: 100%;
+}
+.carousel-caption h3 {
+    color: darkslateblue;
+    margin-left: 40vh;
+}
+.carousel-caption p{
+    color: black;
+    margin-left: 40vh;
+}
+.carousel-item img {
+    height: 43vh;
+}
+.container .row img {
+    width: 100%;
+    height: auto;
 }

@@ -3,51 +3,74 @@ import { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import bg from '../assets/bg.jpeg';
+import './BookPVR.css';
 export default function Details() {
     const history = useHistory();
-    const [details, setdetails] = useState([])
+    const [seat, setSeat] = useState([])
     const { id } = useParams();
-
+    let index = 0;
+    const totalSeat = 100;
+    let seatDetails = []
+    for (var i = 0; i < totalSeat; i++) {
+        seatDetails.push(false)
+    }
     useEffect(() => {
-        fetch(`http://localhost:3001/${id}`)
+        fetch(`http://localhost:3001/BookedMovies`)
             .then(res => res.json())
             .then(data => {
-                setdetails(data)
+                console.log(data);
+                data.map(item => {
+                    if (item.Key == id) {
+                        seatDetails[item.SeatNo - 1] = true;
+                    }
+                })
+                setSeat(seatDetails);
             })
-            .catch(err => {
-                console.error(err);
-            });
     }, [])
-
-
     const Book = (seat) => {
         let isBooked = true;
         let Key = id;
+        let SeatNo = seat
         let email = localStorage.getItem("token")
-        fetch(`http://localhost:3001/${id}/${seat}`,
+        fetch(`http://localhost:3001/BookedMovies`,
             {
-                "method": "PUT",
+                "method": "POST",
                 headers: { "content-type": "application/json" },
-                body: JSON.stringify({ email, Key, isBooked })
+                body: JSON.stringify({ email, SeatNo, Key, isBooked })
             })
         history.push(`/billPVR/${id}/${seat}`);
     }
-
     return (
         <>
             <Header />
-            <div className="container-fluid" style={{ padding: "2em" , backgroundImage:`url(${bg})` , position:'relative' ,backgroundSize:'cover'}}>
-                <div class="row" >
-                    {
-                        details.map(item => (
-                            item.isBooked ?
-                                <div class="card col-2 m-3" style={{ backgroundColor: 'red', height: '6rem' , color:'white' , textAlign: 'center' , padding:'2rem 0rem'}}>
-                                    {item.id}
-                                </div>
-                                :
-                                <a href="" class="card col-2 m-3" onClick={Book.bind(this, item.seat)} style={{ backgroundColor: 'green', color:'white', height: '6rem', padding:'2rem 0rem', textAlign: 'center' ,textDecoration:'none' }}><b>{item.id}</b></a>  
-                        ))}
+            <div id="seat">
+                <ul className="showcase">
+                    <li>
+                        <div className="seat"></div>
+                        <small>Available</small>
+                    </li>
+                    <li>
+                        <div className="seat selected"></div>
+                        <small>Selected</small>
+                    </li>
+                    <li>
+                        <div className="seat occupied"></div>
+                        <small>Occupied</small>
+                    </li>
+                </ul>
+                <div className="container">
+                    <div className="screen">
+                    </div>
+                    <div className="row">
+                        {
+                            seat.map(item => (
+                                item === true ?
+                                    <b className="seat occupied">{index = index + 1}</b>
+                                    :
+                                    <b className="seat" onClick={Book.bind(this, index + 1)}>{index = index + 1}</b>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
         </>

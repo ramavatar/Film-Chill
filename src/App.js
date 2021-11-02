@@ -17,16 +17,18 @@ import BookCarnivels from './components/bookCarnivels/BookCarnivels';
 import BookPVR from './components/bookPVR/BookPVR';
 import BillPVR from './components/billPVR/BillPVR';
 import BillCarnivels from './components/billCarnivels/BillCarnivels';
+import Header from './components/header/Header';
 function App() {
   return (
     <div>
+      {/* <Header /> */}
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/movies" component={Movies}/>
+          <Route exact path="/movies" component={Movies} />
           <Route exact path="/favorites" component={() => localStorage.getItem("token") ? <Favorites /> : <Redirect to="/login" />} />
-          <Route exact path="/bookNow" component={BookNow}/>
+          <Route exact path="/bookNow" component={BookNow} />
           <Route exact path="/" component={AboutUs} />
           <Route exact path="/password" component={forgetPassword} />
           <Route exact path="/filter" component={Filter} />
@@ -35,7 +37,7 @@ function App() {
           <Route exact path="/bookCarnivels" component={() => localStorage.getItem("token") ? <BookCarnivels /> : <Redirect to="/login" />} />
           <Route exact path="/details/:id" component={Details} />
           <Route exact path="/logout" component={() => localStorage.getItem("token") ? <Logout /> : <Redirect to="/login" />} />
-          <Route exact path="/remove" component={() => localStorage.getItem("token") ? <RemoveAccount/> : <Redirect to="/login" />} />
+          <Route exact path="/remove" component={() => localStorage.getItem("token") ? <RemoveAccount /> : <Redirect to="/login" />} />
           <Route exact path="/book/:id" component={() => localStorage.getItem("token") ? <Book /> : <Redirect to="/login" />} />
           <Route exact path="/bookPVR/:id" component={() => localStorage.getItem("token") ? <BookPVR /> : <Redirect to="/login" />} />
           <Route exact path="/bookCarnivels" component={() => localStorage.getItem("token") ? <BookCarnivels /> : <Redirect to="/login" />} />
