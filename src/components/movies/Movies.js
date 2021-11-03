@@ -8,7 +8,6 @@ export default function Dashboard() {
     const key = "04c35731a5ee918f014970082a0088b1";
     const IMG_URL = 'https://image.tmdb.org/t/p/w500';
     const [movieApi, setmovieApi] = useState([])
-    const [search, setsearch] = useState("")
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=${key}&page=1`)
@@ -29,7 +28,6 @@ export default function Dashboard() {
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        {/* <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button> */}
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item">
@@ -41,9 +39,6 @@ export default function Dashboard() {
                         <div className="carousel-item">
                             <img src="https://in.bmscdn.com/promotions/cms/creatives/1635706219525_movieseternals_incinemasthisfridaybooknow_webshowcase_1240x300.jpg" className="d-block w-100" alt="..." />
                         </div>
-                        {/* <div className="carousel-item">
-                            <img src="https://in.bmscdn.com/promotions/cms/creatives/1635795915341_diwaligiftcardbanner_webshowcase_1240x300.jpg" className="d-block w-100" alt="..." />
-                        </div> */}
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -54,7 +49,7 @@ export default function Dashboard() {
                         <span className="visually-hidden">Next</span>
                     </button>
                 </div>
-                <div className="container-fluild" style={{ paddingBottom: '2rem' }}>
+                <div className="container-fluild" style={{ padding:'2rem' ,paddingTop:'0rem' , paddingBottom:'6rem'}}>
                     <div className="row">
                         {
                             movieApi.map(item => <Card id={item.id} title={item.original_title} image={IMG_URL + item.poster_path} release_date={item.release_date} overview={item.overview} rating={item.vote_average} voting={item.vote_count} />)

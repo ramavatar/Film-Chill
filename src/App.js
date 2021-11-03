@@ -13,15 +13,12 @@ import Filter from './components/filter/Filter';
 import RemoveAccount from './components/delete/Delete';
 import forgetPassword from './components/forgetPassword/forgetPassword';
 import Book from './components/book/Book';
-import BookCarnivels from './components/bookCarnivels/BookCarnivels';
-import BookPVR from './components/bookPVR/BookPVR';
-import BillPVR from './components/billPVR/BillPVR';
-import BillCarnivels from './components/billCarnivels/BillCarnivels';
-import Header from './components/header/Header';
+import BookTheater from './components/bookTheater/BookTheater';
+import Bill from './components/bill/Bill';
+import Search from './components/search/Search';
 function App() {
   return (
     <div>
-      {/* <Header /> */}
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
@@ -32,17 +29,13 @@ function App() {
           <Route exact path="/" component={AboutUs} />
           <Route exact path="/password" component={forgetPassword} />
           <Route exact path="/filter" component={Filter} />
-          <Route exact path="/book" component={() => localStorage.getItem("token") ? <Book /> : <Redirect to="/login" />} />
-          <Route exact path="/bookPVR" component={() => localStorage.getItem("token") ? <BookPVR /> : <Redirect to="/login" />} />
-          <Route exact path="/bookCarnivels" component={() => localStorage.getItem("token") ? <BookCarnivels /> : <Redirect to="/login" />} />
+          <Route exact path="/:search" component={Search} />
           <Route exact path="/details/:id" component={Details} />
           <Route exact path="/logout" component={() => localStorage.getItem("token") ? <Logout /> : <Redirect to="/login" />} />
           <Route exact path="/remove" component={() => localStorage.getItem("token") ? <RemoveAccount /> : <Redirect to="/login" />} />
           <Route exact path="/book/:id" component={() => localStorage.getItem("token") ? <Book /> : <Redirect to="/login" />} />
-          <Route exact path="/bookPVR/:id" component={() => localStorage.getItem("token") ? <BookPVR /> : <Redirect to="/login" />} />
-          <Route exact path="/bookCarnivels" component={() => localStorage.getItem("token") ? <BookCarnivels /> : <Redirect to="/login" />} />
-          <Route exact path="/billPVR/:id/:seat" component={() => localStorage.getItem("token") ? <BillPVR /> : <Redirect to="/login" />} />
-          <Route exact path="/billCarnivels" component={() => localStorage.getItem("token") ? <BillCarnivels /> : <Redirect to="/login" />} />
+          <Route exact path="/:theater/:id/:show" component={() => localStorage.getItem("token") ? <BookTheater/> : <Redirect to="/login" />} />
+          <Route exact path="/bill/:id/:seat" component={() => localStorage.getItem("token") ? <Bill/> : <Redirect to="/login" />} />
         </Switch>
       </Router>
       <Footer />

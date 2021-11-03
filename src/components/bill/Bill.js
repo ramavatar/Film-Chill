@@ -32,7 +32,6 @@ export default function BillPVR() {
                     </div>
                     <div class="card-body text-primary">
                         <h5 class="card-title">Movie Title : {title}</h5>
-                        <div class="card-text">Movie Id : {id}</div>
                         <div class="card-text">Seat No : {seat}</div>
                         <div class="card-text">Timing :  10:00 AM</div>
                         <div class="card-text">Amount : Rs 150</div>
@@ -49,6 +48,7 @@ export default function BillPVR() {
                                     <div class="number"> <span>4</span> <span>4</span> <span>3</span> <span>2</span> </div>
                                 </div>
                             </div>
+                            
                             <div class="second px-4 text-dark">
                                 <div class="d-flex flex-row justify-content-between align-items-center">
                                     <div class="name">

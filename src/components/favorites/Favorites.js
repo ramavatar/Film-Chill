@@ -2,7 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import { useHistory } from 'react-router-dom';
-import './Favorites.css';
 export default function FavoritesMovies() {
     const history = useHistory();
     const [allFavoritesMovies, setFavoritesMovies] = useState([])
@@ -40,14 +39,14 @@ export default function FavoritesMovies() {
           alert("Movies Not in Theater")
        }
        else{
-        history.push(`/bookPVR/${id}`)
+        history.push(`/book/${id}`)
        }
      }
 
     return (
         <>
             <Header />
-            <div id="favorites" className="container-fluid" style={{ paddingBottom: "2em" }}>
+            <div id="favorites" className="container-fluid" style={{ padding: "2em" ,paddingTop:'0em' ,paddingBottom:'6rem'}}>
                 <div className="row">
                     {
                         allFavoritesMovies.map(item => (

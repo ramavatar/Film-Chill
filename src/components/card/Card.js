@@ -66,7 +66,7 @@ export default function Card(props) {
     }
 
     return (
-        <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{marginTop:'2%'}} >
+        <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{marginTop:'2%'}}>
             <div className="card m-2">
                 <img src={props.image} className="card-img-top" onClick={displayDetails.bind(this,props.id)} style={{ height: '13rem' }} alt="No Image Found" />
                 <div className="card-body">

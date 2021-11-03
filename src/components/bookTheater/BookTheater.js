@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import './BookPVR.css';
+import './BookTheater.css';
 export default function Details() {
     const history = useHistory();
     const [seat, setSeat] = useState([])

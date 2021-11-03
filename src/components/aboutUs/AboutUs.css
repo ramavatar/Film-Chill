@@ -17,8 +17,6 @@ body {
     text-align: center;
     background-color: rgb(21, 21, 49);
     color: white;
-    box-shadow: 5px 5px 25px rgb(184, 16, 16);
-    transition:transform 1s ease-out ;
   }
   
   h1{
@@ -27,9 +25,9 @@ body {
 }
 
   h2{
-      margin: 23px;
+       margin-top:2%;
       color: blueviolet;
       text-align: center;
       font-weight: bolder;
-      font-size: 3em;
+      font-size: 2.5em;
   }

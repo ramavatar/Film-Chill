@@ -1,9 +1,8 @@
 .footer{
-    /* padding-top: 8px ; */
-    height: 80px;
+    height: 60px;
     bottom: 0;
     margin-top: auto;
-    /* position:fixed; */
+    position:fixed;
     text-align: center;
     background-color:black;
     font-weight: bold;
@@ -12,10 +11,9 @@
 }
 
 .footer b{
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .footer span{
-    /* padding : 0px 10px; */
-    font-size: 1.3em;
+    font-size: 1em;
 }
