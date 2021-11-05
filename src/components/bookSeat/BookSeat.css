@@ -1,11 +1,11 @@
 #seat {
-    background-color: #242333;
+  background-color: #8581be;
     display: flex;
     flex-direction: column;
     color: white;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 77vh;
     font-family: 'Lato', 'sans-serif';
   }
   .movie-container select {
@@ -79,4 +79,7 @@
     margin: 20px auto;
     transform: rotateX(-45deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+  }
+  small{
+    color: #fff;
   }

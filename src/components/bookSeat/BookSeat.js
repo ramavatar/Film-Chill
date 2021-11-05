@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import './BookTheater.css';
-export default function Details() {
+import './BookSeat.css';
+export default function BookSeat() {
     const history = useHistory();
     const [seat, setSeat] = useState([])
     const { id } = useParams();
+    const { theater } = useParams();
+    const { showtiming } = useParams();
     let index = 0;
     const totalSeat = 100;
     let seatDetails = []
@@ -20,25 +22,28 @@ export default function Details() {
             .then(data => {
                 console.log(data);
                 data.map(item => {
-                    if (item.Key == id) {
+                    if (item.Key == id && item.timing == showtiming && item.theaterName==theater) {
                         seatDetails[item.SeatNo - 1] = true;
                     }
                 })
                 setSeat(seatDetails);
             })
     }, [])
+    
     const Book = (seat) => {
         let isBooked = true;
         let Key = id;
+        let  theaterName = theater;
+        let timing = showtiming;
         let SeatNo = seat
         let email = localStorage.getItem("token")
         fetch(`http://localhost:3001/BookedMovies`,
             {
                 "method": "POST",
                 headers: { "content-type": "application/json" },
-                body: JSON.stringify({ email, SeatNo, Key, isBooked })
+                body: JSON.stringify({ email, theaterName, timing , SeatNo, Key, isBooked })
             })
-        history.push(`/billPVR/${id}/${seat}`);
+        history.push(`/bill/${id}/${seat}`);
     }
     return (
         <>

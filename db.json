@@ -32,64 +32,46 @@
       "rating": 7.5,
       "voting": 9413,
       "id": 10
+    },
+    {
+      "key": 228150,
+      "email": "ram@gmail.com",
+      "overview": "In the last months of World War II, as the Allies make their final push in the European theatre, a battle-hardened U.S. Army sergeant named 'Wardaddy' commands a Sherman tank called 'Fury' and its five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
+      "title": "Fury",
+      "image": "https://image.tmdb.org/t/p/w500/q7kgbEjx2BHUDErfU7lH8UqS51R.jpg",
+      "rating": 7.5,
+      "voting": 9417,
+      "id": 11
+    },
+    {
+      "key": 438631,
+      "email": "ram@gmail.com",
+      "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+      "title": "Dune",
+      "image": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+      "rating": 8,
+      "voting": 3312,
+      "id": 13
     }
   ],
   "BookedMovies": [
     {
-      "email": "kirti@globallogic.com",
-      "Key": "314572",
+      "email": "ram@gmail.com",
+      "theaterName": "PVR",
+      "timing": "7:00PM",
+      "SeatNo": 57,
+      "Key": "228326",
       "isBooked": true,
-      "SeatNo": 8,
       "id": 1
     },
     {
-      "email": "ram@globallogic.com",
-      "Key": "314572",
-      "isBooked": true,
-      "SeatNo": 7,
-      "id": 2
-    },
-    {
-      "email": "kirti@globallogic.com",
-      "SeatNo": 49,
-      "Key": "314572",
-      "isBooked": true,
-      "id": 3
-    },
-    {
-      "email": "kirti@globallogic.com",
-      "SeatNo": 90,
-      "Key": "228150",
-      "isBooked": true,
-      "id": 4
-    },
-    {
-      "email": "kirti@globallogic.com",
-      "SeatNo": 95,
-      "Key": "228150",
-      "isBooked": true,
-      "id": 5
-    },
-    {
-      "email": "kirti@globallogic.com",
-      "SeatNo": 6,
-      "Key": "228326",
-      "isBooked": true,
-      "id": 6
-    },
-    {
-      "email": "kirti@globallogic.com",
-      "SeatNo": 7,
-      "Key": "228326",
-      "isBooked": true,
-      "id": 7
-    },
-    {
       "email": "ram@gmail.com",
-      "SeatNo": 50,
+      "theaterName": "PVR",
+      "timing": "7:00PM",
+      "SeatNo": 46,
       "Key": "228326",
       "isBooked": true,
-      "id": 8
+      "id": 2
     }
   ]
 }

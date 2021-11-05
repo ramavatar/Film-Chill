@@ -3,20 +3,30 @@ import { useState, useEffect } from 'react';
 import Card from '../card/Card';
 import Header from '../header/Header'
 import { useParams } from 'react-router-dom';
+import CustomPagination from '../pagination/Pagination';
+import Alert from 'react-bootstrap/Alert';
+import Modal from 'react-bootstrap/Modal';
 export default function Search() {
-
+    const key = "04c35731a5ee918f014970082a0088b1";
     const IMG_URL = 'https://image.tmdb.org/t/p/w500';
     const { search } = useParams();
     const [card, setcard] = useState([]);
+    const [page, setPage] = useState(1);
+    const [totalpage, setTotalPage] = useState("");
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=04c35731a5ee918f014970082a0088b1&query=${search}`)
+        window.scroll(0, 0);
+        fetchMovies();
+    }, [page]);
+
+    const fetchMovies = async () => {
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${search}&page=${page}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 setcard(data.results);
+                setTotalPage(data.total_pages)
             })
-    }, [])
+    };
 
     return (
 
@@ -25,9 +35,22 @@ export default function Search() {
             <div className="container" style={{ paddingBottom: "4em" }}>
                 <div className="row">
                     {
-                        card.map(item => <Card  title={item.original_title} image={IMG_URL + item.poster_path} release_date={item.release_date} overview={item.overview} rating={item.vote_average} voting={item.vote_count} />)
+                        totalpage === 0 ?
+                            <Modal.Dialog >
+                                <Modal.Header>
+                                    <Modal.Title>{search}</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <Alert variant="danger" className="m-4">
+                                        No Data Found
+                                    </Alert>
+                                </Modal.Body>
+                            </Modal.Dialog>
+                            :
+                            card.map(item => <Card id={item.id} title={item.original_title} image={IMG_URL + item.poster_path} release_date={item.release_date} overview={item.overview} rating={item.vote_average} voting={item.vote_count} />)
                     }
                 </div>
+                <CustomPagination setPage={setPage} totalpage={totalpage} />
             </div>
         </div>
     )

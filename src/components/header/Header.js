@@ -1,15 +1,13 @@
  import React from 'react'
  import { NavDropdown } from 'react-bootstrap';
  import './Header.css';
- import { useState , useEffect} from 'react';
+ import { useState} from 'react';
  import { useHistory } from 'react-router-dom';
- import Card from '../card/Card';
 export default function Header() {
 
     const [search, setsearch] = useState("");
     const history = useHistory();
     
-
     const searchMovies = () => {
         history.push(`/${search}`)
     }
@@ -35,11 +33,11 @@ export default function Header() {
                                              localStorage.getItem("token") ?
                                                  <nav>
                                                      <NavDropdown title={localStorage.getItem("token")} >
-                                                         <li className="nav-item" style={{ width: '120%' }}>
+                                                         <li className="nav-item">
                                                              <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color: 'black' }}>Logout<i className='fa fa-sign-in' style={{ paddingLeft: '10%' }}></i></a>
                                                          </li>
                                                          <hr />
-                                                         <li className="nav-item" style={{ width: '120%' }}>
+                                                         <li className="nav-item">
                                                              <a href="/remove" style={{ textDecoration: 'none', paddingLeft: '10%', color: 'black' }}>Remove<i className='fa fa-trash-o' style={{ paddingLeft: '10%' }}></i></a>
                                                          </li>
                                                      </NavDropdown>

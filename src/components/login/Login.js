@@ -46,13 +46,14 @@ export default function Login() {
                </div>
                <div className="col-sm-12 md-6 col-lg-5"> 
                   <h1 className="mt-2">Login</h1>
+                  <hr/>
                   <p id="invalid" style={{ color: 'red' }}></p>
                   <div className="mb-4">
-                     <label>e-mail</label>
+                     <label><b>e-mail</b></label>
                      <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="fill@chill.com" />
                   </div>
                   <div className="mb-4">
-                  <label>Password</label>
+                  <label><b>Password</b></label>
                      <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="********" />
                   </div>
                   <div className="mb-2">

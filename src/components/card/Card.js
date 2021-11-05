@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import { Badge } from "@material-ui/core";
 export default function Card(props) {
     const history = useHistory()
     const [title, setTitle] = useState("")
@@ -11,7 +12,7 @@ export default function Card(props) {
     const [voting, setVoting] = useState("")
     const [key, setId] = useState("")
     const [allFavorites, setFavorites] = useState([])
-    const [heart , setHeart] = useState(false);
+    const [heart, setHeart] = useState(false);
 
     useEffect(() => {
         setOverview(props.overview)
@@ -30,9 +31,8 @@ export default function Card(props) {
                 data.map(item => {
                     if (item.email == localStorage.getItem("token")) {
                         arr.push(item)
-                        if(item.title == props.title){
+                        if (item.title == props.title) {
                             setHeart(true)
-                            // alert("Already Added to Favourites")
                         }
                     }
                 })
@@ -42,16 +42,15 @@ export default function Card(props) {
 
     const addFavorites = () => {
         if (localStorage.getItem("token")) {
-                fetch("http://localhost:3001/favorites",
-                    {
-                        "method": "POST",
-                        headers:
-                            { "content-type": "application/json" },
-                        body: JSON.stringify({ key ,email, overview, title, image, rating, voting })
-                    },
-                    history.push("/favorites")
-                    // alert("Added to favourites")
-                )
+            fetch("http://localhost:3001/favorites",
+                {
+                    "method": "POST",
+                    headers:
+                        { "content-type": "application/json" },
+                    body: JSON.stringify({ key, email, overview, title, image, rating, voting })
+                },
+                history.push("/favorites")
+            )
         }
         else {
             history.push("/login");
@@ -59,31 +58,34 @@ export default function Card(props) {
     }
 
     const displayDetails = (id) => {
-        if(id!=undefined){
+        if (id != undefined) {
             history.push(`/details/${id}`)
         }
 
     }
 
     return (
-        <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{marginTop:'2%'}}>
+        <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{ marginTop: '2%' }}>
             <div className="card m-2">
-                <img src={props.image} className="card-img-top" onClick={displayDetails.bind(this,props.id)} style={{ height: '13rem' }} alt="No Image Found" />
+                <Badge
+                    badgeContent={props.rating}
+                    color={props.rating > 7 ? "primary" : "secondary"}
+                />
+                <img src={props.image} className="card-img-top" onClick={displayDetails.bind(this, props.id)} style={{ height: '13rem' }} alt="No Image Found" />
                 <div className="card-body">
                     <h6 className="card-title">{props.title}</h6>
                     <p className="card-text">
-                    {
-                        heart ?
-                            <a If href="#">
-                                <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
-                            </a>
-                            :
-                            <a If href="#">
-                                <span class="fa fa-heart-o m-2" style={{ color: 'red', float: 'left' }} onClick={addFavorites}></span>
-                            </a>
-                    }
-                        <span class="fa fa-star checked m-2" style={{ color: 'orange' }}></span>{props.rating}
-                        <span className="fa fa-thumbs-up m-2" style={{float: 'right'}}> {props.voting} Votes</span>
+                        {
+                            heart ?
+                                <a If href="#">
+                                    <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
+                                </a>
+                                :
+                                <a If href="#">
+                                    <span class="fa fa-heart-o m-2" style={{ color: 'red', float: 'left' }} onClick={addFavorites}></span>
+                                </a>
+                        }
+                        <span className="fa fa-thumbs-up m-2" style={{ float: 'right' }}> {props.voting} Votes</span>
                     </p>
                 </div>
             </div>

@@ -72,23 +72,24 @@ export default function Register() {
                </div>
                <div className="col-sm-12 md-6 col-lg-5">
                   <h1 className="mb-4 mt-4">Register</h1>
+                  <hr/>
                   <div className="mb-2" id="msg" style={{ color: 'red' }}>
 
                   </div>
                   <div className="mb-2">
-                     <label>UserName</label>
+                     <label><b>UserName</b></label>
                      <input type="text" className="form-control" onChange={(e) => setUserName(e.target.value)} placeholder="UserName" />
                   </div>
                   <div className="mb-2">
-                     <label>e-mail</label>
+                     <label><b>e-mail</b></label>
                      <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="email" />
                   </div>
                   <div className="mb-2">
-                     <label>Password</label>
+                     <label><b>Password</b></label>
                      <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                   </div>
                   <div className="mb-4">
-                     <label>Re-Enter Password</label>
+                     <label><b>Re-Enter Password</b></label>
                      <input type="password" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
                   </div>
                   <div className="mb-2">
