@@ -15,25 +15,6 @@
   ],
   "favorites": [
     {
-      "email": "kirti@globallogic.com",
-      "overview": "Minutes after Laurie Strode, her daughter Karen and granddaughter Allyson left masked monster Michael Myers caged and burning in Laurie's basement, Laurie is rushed to the hospital with life-threatening injuries, believing she finally killed her lifelong tormentor. But when Michael manages to free himself from Laurie's trap, his ritual bloodbath resumes. As Laurie fights her pain and prepares to defend herself against him, she inspires all of Haddonfield to rise up against their unstoppable monster. The Strode women join a group of other survivors of Michael's first rampage who decide to take matters into their own hands, forming a vigilante mob that sets out to hunt Michael down, once and for all.",
-      "title": "Halloween Kills",
-      "image": "https://image.tmdb.org/t/p/w500/ir9eyz1mtgsohjvo7UYtqUfFuES.jpg",
-      "rating": 7.1,
-      "voting": 990,
-      "id": 9
-    },
-    {
-      "key": 228150,
-      "email": "kirti@globallogic.com",
-      "overview": "In the last months of World War II, as the Allies make their final push in the European theatre, a battle-hardened U.S. Army sergeant named 'Wardaddy' commands a Sherman tank called 'Fury' and its five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-      "title": "Fury",
-      "image": "https://image.tmdb.org/t/p/w500/q7kgbEjx2BHUDErfU7lH8UqS51R.jpg",
-      "rating": 7.5,
-      "voting": 9413,
-      "id": 10
-    },
-    {
       "key": 228150,
       "email": "ram@gmail.com",
       "overview": "In the last months of World War II, as the Allies make their final push in the European theatre, a battle-hardened U.S. Army sergeant named 'Wardaddy' commands a Sherman tank called 'Fury' and its five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
@@ -52,26 +33,45 @@
       "rating": 8,
       "voting": 3312,
       "id": 13
+    },
+    {
+      "key": 438631,
+      "email": "kirti@globallogic.com",
+      "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+      "title": "Dune",
+      "image": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+      "rating": 8,
+      "voting": 3361,
+      "id": 14
     }
   ],
   "BookedMovies": [
     {
-      "email": "ram@gmail.com",
-      "theaterName": "PVR",
-      "timing": "7:00PM",
-      "SeatNo": 57,
-      "Key": "228326",
+      "email": "kirti@globallogic.com",
+      "theaterName": "Inox",
+      "timing": "6:00PM",
+      "SeatNo": 49,
+      "movie": "Dune",
       "isBooked": true,
       "id": 1
     },
     {
-      "email": "ram@gmail.com",
-      "theaterName": "PVR",
-      "timing": "7:00PM",
-      "SeatNo": 46,
-      "Key": "228326",
+      "email": "kirti@globallogic.com",
+      "theaterName": "Inox",
+      "timing": "6:00PM",
+      "SeatNo": 44,
+      "movie": "Dune",
       "isBooked": true,
       "id": 2
+    },
+    {
+      "email": "kirti@globallogic.com",
+      "theaterName": "Inox",
+      "timing": "6:00PM",
+      "SeatNo": 55,
+      "movie": "Dune",
+      "isBooked": true,
+      "id": 3
     }
   ]
 }

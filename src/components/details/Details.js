@@ -67,7 +67,7 @@ export default function Details() {
                                         }
                                         <a className="btn btn-danger m-2" href={`https://www.youtube.com/watch?v=${video}`} target="__blank">Watch Trailer</a>
 
-                                        <a className="btn btn-warning m-2" onClick={Book.bind(this, details.id)}>Book Movie</a>
+                                        <a className="btn btn-warning m-2" onClick={Book.bind(this, details.title)}>Book Movie</a>
                                     </>
                                     :
                                     <>

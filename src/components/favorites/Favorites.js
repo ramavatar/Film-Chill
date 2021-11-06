@@ -39,9 +39,17 @@ export default function FavoritesMovies() {
           alert("Movies Not in Theater")
        }
        else{
-        history.push(`/book/${id}`)
+        history.push(`/choosetheater/${id}`)
        }
      }
+
+     const displayDetails = (id) => {
+        if (id != undefined) {
+            history.push(`/details/${id}`)
+        }
+
+    }
+     
 
     return (
         <>
@@ -52,7 +60,7 @@ export default function FavoritesMovies() {
                         allFavoritesMovies.map(item => (
                             <div className=" col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4">
                                 <div className="card">
-                                    <img src={item.image} style={{ height: '15rem' }} data-testid="image" className="card-img-top" alt="No image Found" />
+                                    <img src={item.image} style={{ height: '15rem' }} data-testid="image" className="card-img-top" alt="No image Found" onClick={displayDetails.bind(this, item.key)} />
                                     <div className="card-body">
                                         <h6 className="card-title">{item.title}</h6>
                                         <p className="card-text">

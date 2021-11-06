@@ -2,23 +2,31 @@ import React from 'react';
 import Header from '../header/Header';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-export default function BillPVR() {
-    const { id } = useParams();
-    const { seat } = useParams();
-    const [title, setTitle] = useState("")
-    const key = "04c35731a5ee918f014970082a0088b1";
-    const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+export default function Bill() {
+
+    let arr = ""
+    let timing = "";
+    let name = "";
+    const [seat, setSeat] = useState("")
+    const [theater, setTheater] = useState("")
+    const [showTiming, setShowTiming] = useState("")
+    const { movieName } = useParams();
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=${key}&page=1`)
+        fetch(`http://localhost:3001/BookedMovies`)
             .then(response => response.json())
             .then(data => {
-                console.log(data.results);
-                data.results.map(item=>{
-                    if(item.id == id){
-                        setTitle(item.original_title)
+                data.map(item=>{
+                    if(item.email === localStorage.getItem("token") && item.movie === movieName){
+                        console.log(item);
+                        name = item.theaterName;
+                        timing = item.timing;
+                        arr = arr + "  " + item.SeatNo;
                     }
                 })
+                setSeat(arr);
+                setShowTiming(timing)
+                setTheater(name)
             })
     }, [])
 
@@ -28,12 +36,12 @@ export default function BillPVR() {
             <div class="container d-flex justify-content-center mt-2">
                 <div class="card border-success">
                     <div class="card-header bg-success border-success">
-                        <center><b style={{color:'white'}}>PVR Booking</b></center>
+                        <center><b style={{color:'white'}}>Film&Chill Booking</b></center>
                     </div>
                     <div class="card-body text-primary">
-                        <h5 class="card-title">Movie Title : {title}</h5>
-                        <div class="card-text">Seat No : {seat}</div>
-                        <div class="card-text">Timing :  10:00 AM</div>
+                        <h5 class="card-title">Movie Title : {movieName}</h5>
+                        <div class="card-text">Seat No : {seat} </div>
+                        <div class="card-text">Timing :  {showTiming}</div>
                         <div class="card-text">Amount : Rs 150</div>
                         
                         <div class="card bg-info mt-2">
@@ -52,7 +60,7 @@ export default function BillPVR() {
                             <div class="second px-4 text-dark">
                                 <div class="d-flex flex-row justify-content-between align-items-center">
                                     <div class="name">
-                                        <h4>PVR theatre</h4>
+                                        <h4>{theater}</h4>
                                     </div>
                                     <div class="date d-flex flex-row align-items-center">
                                         <div class="valid mr-2"> <span class="d-block">VALID</span> <span class="pull-right">TO</span> </div> <span>Today</span>

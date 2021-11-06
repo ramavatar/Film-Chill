@@ -58,10 +58,7 @@ export default function Card(props) {
     }
 
     const displayDetails = (id) => {
-        if (id != undefined) {
-            history.push(`/details/${id}`)
-        }
-
+        history.push(`/details/${id}`)
     }
 
     return (
