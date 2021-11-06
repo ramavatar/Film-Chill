@@ -4,21 +4,17 @@ import { Badge } from "@material-ui/core";
 export default function Card(props) {
     const history = useHistory()
     const [title, setTitle] = useState("")
-    const [overview, setOverview] = useState("")
     const [image, setImage] = useState("")
     const [email, setEmail] = useState("")
-    const [releaseDate, setReleaseDate] = useState("")
     const [rating, setRating] = useState("")
     const [voting, setVoting] = useState("")
-    const [key, setId] = useState("")
+    const [id, setId] = useState("")
     const [allFavorites, setFavorites] = useState([])
     const [heart, setHeart] = useState(false);
 
     useEffect(() => {
-        setOverview(props.overview)
         setTitle(props.title)
         setImage(props.image)
-        setReleaseDate(props.release_date)
         setRating(props.rating)
         setVoting(props.voting)
         setId(props.id)
@@ -29,9 +25,9 @@ export default function Card(props) {
             .then(res => res.json())
             .then(data => {
                 data.map(item => {
-                    if (item.email == localStorage.getItem("token")) {
+                    if (item.email === localStorage.getItem("token")) {
                         arr.push(item)
-                        if (item.title == props.title) {
+                        if (item.id === props.id) {
                             setHeart(true)
                         }
                     }
@@ -47,7 +43,7 @@ export default function Card(props) {
                     "method": "POST",
                     headers:
                         { "content-type": "application/json" },
-                    body: JSON.stringify({ key, email, overview, title, image, rating, voting })
+                    body: JSON.stringify({ id, email, title, image, rating, voting })
                 },
                 history.push("/favorites")
             )
@@ -55,6 +51,14 @@ export default function Card(props) {
         else {
             history.push("/login");
         }
+    }
+
+    const RemoveFavorite = (id) => {
+        let filteredFavorite = allFavorites.filter(x => x.id !== id)
+        fetch(`http://localhost:3001/favorites/${id}`, {
+            method: "DELETE"
+        })
+        setFavorites(filteredFavorite)
     }
 
     const displayDetails = (id) => {
@@ -75,7 +79,7 @@ export default function Card(props) {
                         {
                             heart ?
                                 <a If href="#">
-                                    <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
+                                    <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} onClick={RemoveFavorite.bind(this, props.id)}></span>
                                 </a>
                                 :
                                 <a If href="#">
