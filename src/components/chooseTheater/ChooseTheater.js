@@ -7,7 +7,7 @@ export default function Book() {
         <>
             <Header />
             <div className="container-fluid">
-                <div className=" alert alert-success row m-4">
+                <div className=" alert alert-danger row m-4">
                     <div class="col-2">
                        <b> Theatre Name</b>
                     </div>
@@ -25,10 +25,10 @@ export default function Book() {
                         <a href={`/book/PVR/${movieName}/10:00AM`} className="btn btn-outline-success">10:00 AM</a>
                     </div>
                     <div class="col-2">
-                        <a href={`/book/PVR/${movieName}/1:30PM`} className="btn btn-outline-warning">1:30 PM</a>
+                        <a href={`/book/PVR/${movieName}/1:30PM`} className="btn btn-outline-success">1:30 PM</a>
                     </div>
                     <div class="col-2">
-                        <a href={`/book/PVR/${movieName}/3:30PM`} className="btn btn-outline-danger">3:30 PM</a>
+                        <a href={`/book/PVR/${movieName}/3:30PM`} className="btn btn-outline-success">3:30 PM</a>
                     </div>
                     <div class="col-2">
                         <a href={`/book/PVR/${movieName}/7:00PM`} className="btn btn-outline-success">7:00 PM</a>
@@ -47,7 +47,7 @@ export default function Book() {
                         <a href={`/book/Carnivals/${movieName}/12:00PM`} className="btn btn-outline-success">12:00 PM</a>
                     </div>
                     <div class="col-2">
-                        <a href={`/book/Carnivals/${movieName}/5:00PM`} className="btn btn-outline-warning">5:00 PM</a>
+                        <a href={`/book/Carnivals/${movieName}/5:00PM`} className="btn btn-outline-success">5:00 PM</a>
                     </div>
                     <div class="col-2">
                         <a href={`/book/Carnivals/${movieName}/9:00PM`} className="btn btn-outline-success">9:00 PM</a>
@@ -63,7 +63,7 @@ export default function Book() {
 
                     </div>
                     <div class="col-2">
-                        <a href={`/book/Inox/${movieName}/2:30PM`} className="btn btn-outline-danger">2:30 PM</a>
+                        <a href={`/book/Inox/${movieName}/2:30PM`} className="btn btn-outline-success">2:30 PM</a>
                     </div>
                     <div class="col-2">
                         <a href={`/book/Inox/${movieName}/6:00PM`} className="btn btn-outline-success">6:00 PM</a>
@@ -98,7 +98,7 @@ export default function Book() {
 
                     </div>
                     <div class="col-2">
-                        <a href={`/book/Cineplex/${movieName}/1:00PM`} className="btn btn-outline-warning">1:00 PM</a>
+                        <a href={`/book/Cineplex/${movieName}/1:00PM`} className="btn btn-outline-success">1:00 PM</a>
                     </div>
                     <div class="col-2">
 

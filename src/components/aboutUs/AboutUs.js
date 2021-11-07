@@ -28,7 +28,7 @@ export default function AboutUs() {
             <h2>Our Team</h2>
 
             <div className="container-fluid">
-                <div className="row" style={{padding:'2rem', paddingBottom:'6rem'}}>
+                <div className="row" style={{ padding: '2rem', paddingBottom: '6rem' }}>
                     <div className="card col-xs-12 col-sm-12 col-md-6 col-lg-4" style={{ flexDirection: 'row' }}>
                         <img src={kirti} className="card-img-top" style={{ width: "30%", height: "25vh" }} alt="No Image Found" />
                         <div className="card-body">
@@ -40,7 +40,7 @@ export default function AboutUs() {
                         </div>
                     </div>
                     <div className="card col-xs-12 col-sm-12 col-md-6 col-lg-4" style={{ flexDirection: 'row' }}>
-                    <img src={ram} className="card-img-top" style={{ width: "30%", height: "25vh" }} alt="No Image Found" />
+                        <img src={ram} className="card-img-top" style={{ width: "30%", height: "25vh" }} alt="No Image Found" />
                         <div className="card-body">
                             <h4 className="card-title">Ram Upadhyay</h4>
                             <p class="card-text">React JS Developer</p>

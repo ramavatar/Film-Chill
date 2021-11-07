@@ -40,7 +40,7 @@ function App() {
           <Route exact path="/remove" component={() => localStorage.getItem("token") ? <RemoveAccount /> : <Redirect to="/login" />} />
           <Route exact path="/choosetheater/:movieName" component={() => localStorage.getItem("token") ? <ChooseTheater /> : <Redirect to="/login" />} />
           <Route exact path="/book/:theater/:movieName/:showtiming" component={() => localStorage.getItem("token") ? <BookSeat/> : <Redirect to="/login" />} />
-          <Route exact path="/bill/:movieName" component={() => localStorage.getItem("token") ? <Bill/> : <Redirect to="/login" />} />
+          <Route exact path="/bill/:movieName/:theater" component={() => localStorage.getItem("token") ? <Bill/> : <Redirect to="/login" />} />
           <Route exact path="/:search" component={Search} />
         </Switch>
       </Router>

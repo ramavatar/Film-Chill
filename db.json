@@ -32,32 +32,5 @@
     }
   ],
   "BookedMovies": [
-    {
-      "email": "kirti@globallogic.com",
-      "theaterName": "Inox",
-      "timing": "6:00PM",
-      "SeatNo": 49,
-      "movie": "Dune",
-      "isBooked": true,
-      "id": 1
-    },
-    {
-      "email": "kirti@globallogic.com",
-      "theaterName": "Inox",
-      "timing": "6:00PM",
-      "SeatNo": 44,
-      "movie": "Dune",
-      "isBooked": true,
-      "id": 2
-    },
-    {
-      "email": "kirti@globallogic.com",
-      "theaterName": "Inox",
-      "timing": "6:00PM",
-      "SeatNo": 55,
-      "movie": "Dune",
-      "isBooked": true,
-      "id": 3
-    }
   ]
 }

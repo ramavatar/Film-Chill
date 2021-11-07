@@ -7,6 +7,7 @@ export default function DeleteAccount() {
     const [allUsers, setAllUsers] = useState([])
     const [id, setId] = useState([])
     var arr = [];
+    console.log("haha")
     let cout = 0;
     fetch("http://localhost:3001/register")
         .then(res => res.json())

@@ -5,7 +5,7 @@
     color: white;
     align-items: center;
     justify-content: center;
-    height: 77vh;
+    height: 100%;
     font-family: 'Lato', 'sans-serif';
   }
   .movie-container select {
@@ -78,3 +78,23 @@
   small{
     color: #fff;
   }
+
+@media only screen and (max-width: 500px) {
+  .me-auto{
+    margin-top: 80px;
+  }
+  button.navbar-toggler{
+    position: absolute;
+    border: 0.5px solid black;
+    top: 5px;
+    right: 0;
+    color: white;
+    background-color: #444451;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    margin-right: 5px;
+  }
+}

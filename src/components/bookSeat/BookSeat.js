@@ -4,63 +4,110 @@ import Header from '../header/Header';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import './BookSeat.css';
+import Modal from '@mui/material/Modal';
 export default function BookSeat() {
     const history = useHistory();
-    const [booking, setBooking] = useState([])
+    const [numbSeat, setNumbSeat] = useState(null);
+    const [noSeat, setNoSeat] = useState(0);
     const [seat, setSeat] = useState([])
+    const [selected, setSelected] = useState(0);
     const { movieName } = useParams();
     const { theater } = useParams();
     const { showtiming } = useParams();
+    const [open, setOpen] = useState(true);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     let index = 0;
-    let arr = []
-    const totalSeat = 100;
+    let arr = [];
+    const totalSeat = 102;
     let seatDetails = []
     for (var i = 0; i < totalSeat; i++) {
         seatDetails.push(false)
     }
-
-    fetch(`http://localhost:3001/BookedMovies`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            data.map(item => {
-                if (item.movie == movieName && item.timing == showtiming && item.theaterName == theater) {
-                    seatDetails[item.SeatNo - 1] = true;
-                    arr.push(item)
-                }
+    if (selected === numbSeat) {
+        history.push(`/bill/${movieName}/${theater}`);
+    }
+    const getSelected = () => {
+        fetch(`http://localhost:3001/BookedMovies`)
+            .then(res => res.json())
+            .then(data => {
+                let cout = 0;
+                data.map(item => {
+                    if (item.movie == movieName && item.timing == showtiming && item.theaterName == theater && item.email == localStorage.getItem("token")) {
+                        cout = cout + 1;
+                    }
+                })
+                setNoSeat(cout);
             })
-            setSeat(seatDetails);
-            // setBooking(arr)
-        })
-
-    // const Bill = () => {
-    //         booking.map(item => {
-    //             if (item.email === localStorage.getItem("token")) {
-    //                 history.push(`/bill/${movieName}`);
-    //             }
-    //         })
-    //     // history.push(`/bill/${movieName}`);
-    // }
-
-    const Book = (seat) => {
-        let isBooked = true;
-        let movie = movieName;
-        let theaterName = theater;
-        let timing = showtiming;
-        let SeatNo = seat
-        let email = localStorage.getItem("token")
-
-        fetch(`http://localhost:3001/BookedMovies`,
-            {
-                "method": "POST",
-                headers: { "content-type": "application/json" },
-                body: JSON.stringify({ email, theaterName, timing, SeatNo, movie, isBooked })
+    }
+    const getData = () => {
+        fetch(`http://localhost:3001/BookedMovies`)
+            .then(res => res.json())
+            .then(data => {
+                data.map(item => {
+                    if (item.movie == movieName && item.timing == showtiming && item.theaterName == theater) {
+                        seatDetails[item.SeatNo - 1] = true;
+                        arr.push(item)
+                    }
+                })
+                setSeat(seatDetails);
             })
-            history.push(`/bill/${movieName}`);
+    }
+    const totalSelectSeat = (x) => {
+        setNumbSeat(noSeat + x)
+    }
+    useEffect(() => {
+        getData()
+        getSelected()
+        setSelected(noSeat);
+    }, [seat]);
+    const Book = (seatSelected) => {
+        if (selected < numbSeat) {
+            let isBooked = true;
+            let movie = movieName;
+            let theaterName = theater;
+            let timing = showtiming;
+            let SeatNo = seatSelected;
+            let email = localStorage.getItem("token")
+            fetch(`http://localhost:3001/BookedMovies`,
+                {
+                    "method": "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({ email, theaterName, timing, SeatNo, movie, isBooked })
+                })
+            getData()
+        }
     }
     return (
         <>
             <Header />
+            <Modal
+                disableEscapeKeyDown
+                onBackdropClick={() => window.location.reload()}
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}
+            >
+                <div style={{ background: "#333", padding: "30px", color: "white" }}>
+                    <div>
+                        Select Number of Seats:
+                    </div><br />
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span onClick={() => { totalSelectSeat(1); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>1</span>
+                        <span onClick={() => { totalSelectSeat(2); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>2</span>
+                        <span onClick={() => { totalSelectSeat(3); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>3</span>
+                        <span onClick={() => { totalSelectSeat(4); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>4</span>
+                        <span onClick={() => { totalSelectSeat(5); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>5</span>
+                        <span onClick={() => { totalSelectSeat(6); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>6</span>
+                    </div>
+                </div>
+            </Modal>
             <div id="seat">
                 <ul className="showcase">
                     <li>
@@ -73,24 +120,20 @@ export default function BookSeat() {
                     </li>
                 </ul>
                 <ul>
-
                 </ul>
-                <div className="container">
+                <div className="container" style={{ padding: "5rem" }}>
                     <div className="screen">
                     </div>
                     <div className="row">
                         {
                             seat.map(item => (
                                 item === true ?
-                                    <b className="selected">{index = index + 1}</b>
+                                    <b className="selected" onClick={Book.bind(this, index + 1)} >{index = index + 1}</b>
                                     :
                                     <b className="seat" onClick={Book.bind(this, index + 1)} >{index = index + 1} </b>
                             ))
                         }
                     </div>
-                    {/* <div>
-                    <button className="col-12 btn btn-success m-2" onClick={Bill}>Book Ticket</button>
-                    </div> */}
                 </div>
             </div>
         </>

@@ -4,29 +4,35 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 export default function Bill() {
 
-    let arr = ""
+    let arr = [];
     let timing = "";
     let name = "";
     const [seat, setSeat] = useState("")
-    const [theater, setTheater] = useState("")
+    const [theaterName, setTheater] = useState("")
+    const [Length, setLength] = useState("")
     const [showTiming, setShowTiming] = useState("")
     const { movieName } = useParams();
+    const { theater } = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:3001/BookedMovies`)
             .then(response => response.json())
             .then(data => {
+                let l=0;
                 data.map(item=>{
-                    if(item.email === localStorage.getItem("token") && item.movie === movieName){
-                        console.log(item);
+                    if(item.email === localStorage.getItem("token") && item.movie === movieName && item.theaterName === theater){
                         name = item.theaterName;
                         timing = item.timing;
-                        arr = arr + "  " + item.SeatNo;
+                        if (!arr.includes(item.SeatNo)) {
+                            arr.push(item.SeatNo);
+                            l=l+1;
+                        }
                     }
                 })
-                setSeat(arr);
+                setSeat(arr.sort().join(", "));
                 setShowTiming(timing)
                 setTheater(name)
+                setLength(l);
             })
     }, [])
 
@@ -39,10 +45,10 @@ export default function Bill() {
                         <center><b style={{color:'white'}}>Film&Chill Booking</b></center>
                     </div>
                     <div class="card-body text-primary">
-                        <h5 class="card-title">Movie Title : {movieName}</h5>
-                        <div class="card-text">Seat No : {seat} </div>
+                        <div class="card-text">Movie Title : {movieName}</div>
+                        <div class="card-text">Selected Seats : {seat} </div>
                         <div class="card-text">Timing :  {showTiming}</div>
-                        <div class="card-text">Amount : Rs 150</div>
+                        <div class="card-text">Amount : Rs {150*Length}</div>
                         
                         <div class="card bg-info mt-2">
                             <div class="first p-3 px-4">
@@ -60,7 +66,7 @@ export default function Bill() {
                             <div class="second px-4 text-dark">
                                 <div class="d-flex flex-row justify-content-between align-items-center">
                                     <div class="name">
-                                        <h4>{theater}</h4>
+                                        <h4>{theaterName}</h4>
                                     </div>
                                     <div class="date d-flex flex-row align-items-center">
                                         <div class="valid mr-2"> <span class="d-block">VALID</span> <span class="pull-right">TO</span> </div> <span>Today</span>
@@ -69,9 +75,9 @@ export default function Bill() {
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer bg-success border-success mb-2">
+                    <div class="card-footer bg-success border-success">
                     <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
-                        <b style={{paddingLeft:'8%' , color:'white'}}>Thank You for Visiting</b>
+                        <b style={{paddingLeft:'13%' , color:'white'}}>Thank You for Visiting</b>
                     <span class="fa fa-heart m-2" style={{ color: 'red', float: 'right' }} ></span>
                     </div>
                 </div>
