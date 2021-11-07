@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { Badge } from "@material-ui/core";
+import { getAccordionDetailsUtilityClass } from '@mui/material';
 export default function Card(props) {
     const history = useHistory()
     const [title, setTitle] = useState("")
@@ -8,7 +9,7 @@ export default function Card(props) {
     const [email, setEmail] = useState("")
     const [rating, setRating] = useState("")
     const [voting, setVoting] = useState("")
-    const [id, setId] = useState("")
+    const [key, setId] = useState("")
     const [allFavorites, setFavorites] = useState([])
     const [heart, setHeart] = useState(false);
 
@@ -19,7 +20,6 @@ export default function Card(props) {
         setVoting(props.voting)
         setId(props.id)
         setEmail(localStorage.getItem("token"))
-
         var arr = [];
         fetch("http://localhost:3001/favorites")
             .then(res => res.json())
@@ -27,7 +27,7 @@ export default function Card(props) {
                 data.map(item => {
                     if (item.email === localStorage.getItem("token")) {
                         arr.push(item)
-                        if (item.id === props.id) {
+                        if (item.key === props.id) {
                             setHeart(true)
                         }
                     }
@@ -43,9 +43,8 @@ export default function Card(props) {
                     "method": "POST",
                     headers:
                         { "content-type": "application/json" },
-                    body: JSON.stringify({ id, email, title, image, rating, voting })
-                },
-                history.push("/favorites")
+                    body: JSON.stringify({ key, email, title, image, rating, voting })
+                }
             )
         }
         else {
@@ -53,12 +52,14 @@ export default function Card(props) {
         }
     }
 
-    const RemoveFavorite = (id) => {
-        let filteredFavorite = allFavorites.filter(x => x.id !== id)
-        fetch(`http://localhost:3001/favorites/${id}`, {
-            method: "DELETE"
+    const RemoveFavorites = (id) => {
+        allFavorites.map(item=>{
+            if(item.key===id){
+                fetch(`http://localhost:3001/favorites/${item.id}`, {
+                    method: "DELETE"
+                })
+            }
         })
-        setFavorites(filteredFavorite)
     }
 
     const displayDetails = (id) => {
@@ -78,11 +79,11 @@ export default function Card(props) {
                     <p className="card-text">
                         {
                             heart ?
-                                <a If href="#">
-                                    <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} onClick={RemoveFavorite.bind(this, props.id)}></span>
+                                <a If href="/movies">
+                                    <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} onClick={RemoveFavorites.bind(this, props.id)}></span>
                                 </a>
                                 :
-                                <a If href="#">
+                                <a If href="/movies">
                                     <span class="fa fa-heart-o m-2" style={{ color: 'red', float: 'left' }} onClick={addFavorites}></span>
                                 </a>
                         }

@@ -77,7 +77,7 @@ export default function Bill() {
                     </div>
                     <div class="card-footer bg-success border-success">
                     <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} ></span>
-                        <b style={{paddingLeft:'13%' , color:'white'}}>Thank You for Visiting</b>
+                        <b style={{paddingLeft:'10%' , color:'white'}}>Thank You for Visiting</b>
                     <span class="fa fa-heart m-2" style={{ color: 'red', float: 'right' }} ></span>
                     </div>
                 </div>

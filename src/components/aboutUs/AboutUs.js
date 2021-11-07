@@ -8,7 +8,7 @@ export default function AboutUs() {
     return (
         <>
             <Header />
-            <div class="about-section">
+            <div className="about-section">
                 <h1>About Us</h1>
                 <p>We Specialize in Providing Best User Experience</p>
                 <p>THE WORLD IS EVOLVING AND SO ARE WE</p>
