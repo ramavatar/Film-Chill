@@ -12,7 +12,7 @@ export default function Filter() {
 
     const handleModal = () => {
         setShow(!show);
-        history.push("/movies");
+        history.push("/");
     }
 
     const displayPopular = () => {

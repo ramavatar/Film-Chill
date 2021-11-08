@@ -46,9 +46,11 @@ export default function Register() {
                             })
                             .then((data) => {
                                console.log(data);
-                            });
+                            })
+                            .catch(err => console.error(err))
                      }
                   })
+                  
                   if (cout == 0) {
                     document.getElementById("msg").innerHTML = "Not a Registered User !";
                   }
@@ -56,7 +58,7 @@ export default function Register() {
                     document.getElementById("msg").innerHTML = "Password Updated Successfully !";
                   }
                })
-                  
+            .catch(err => console.error(err)) 
          }
          else {
             document.getElementById("msg").innerHTML = "password and Confirm Password not Matched";
@@ -79,22 +81,22 @@ export default function Register() {
                   </div>
                   <div className="mb-2">
                      <label>UserName</label>
-                     <input type="text" className="form-control" onChange={(e) => setUserName(e.target.value)} placeholder="UserName" />
+                     <input type="text" id="user" className="form-control" onChange={(e) => setUserName(e.target.value)} placeholder="UserName" />
                   </div>
                   <div className="mb-2">
                      <label>e-mail</label>
-                     <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+                     <input type="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="email" />
                   </div>
                   <div className="mb-2">
                      <label>Password</label>
-                     <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                     <input type="password" id="pass" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                   </div>
                   <div className="mb-4">
                      <label>Re-Enter Password</label>
-                     <input type="password" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
+                     <input type="password" id="confirm" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
                   </div>
                   <div className="mb-2">
-                      <button className="btn btn-info col-12" onClick={PasswordHandeller}>Reset Password</button>
+                      <button id="forgetPass" className="btn btn-info col-12" onClick={PasswordHandeller}>Reset Password</button>
                   </div>
                </div>
             </div>

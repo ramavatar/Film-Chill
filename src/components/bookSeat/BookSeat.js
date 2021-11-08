@@ -19,7 +19,7 @@ export default function BookSeat() {
     const handleClose = () => setOpen(false);
     let index = 0;
     let arr = [];
-    const totalSeat = 102;
+    const totalSeat = 100;
     let seatDetails = []
     for (var i = 0; i < totalSeat; i++) {
         seatDetails.push(false)
@@ -39,6 +39,7 @@ export default function BookSeat() {
                 })
                 setNoSeat(cout);
             })
+            .catch(err => console.error(err))
     }
     const getData = () => {
         fetch(`http://localhost:3001/BookedMovies`)
@@ -52,15 +53,18 @@ export default function BookSeat() {
                 })
                 setSeat(seatDetails);
             })
+            .catch(err => console.error(err))
     }
     const totalSelectSeat = (x) => {
         setNumbSeat(noSeat + x)
     }
+    
     useEffect(() => {
         getData()
         getSelected()
         setSelected(noSeat);
     }, [seat]);
+
     const Book = (seatSelected) => {
         if (selected < numbSeat) {
             let isBooked = true;
@@ -94,24 +98,28 @@ export default function BookSeat() {
                     justifyContent: "center"
                 }}
             >
-                <div style={{ background: "#333", padding: "30px", color: "white" }}>
-                    <div>
-                        Select Number of Seats:
-                    </div><br />
+                <div style={{ background: "#333", padding: "30px" , textAlign: "center" , color:'#fff'}}>
+                    <div className="mb-4">How Many Seats ?</div>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
-                        <span onClick={() => { totalSelectSeat(1); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>1</span>
-                        <span onClick={() => { totalSelectSeat(2); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>2</span>
-                        <span onClick={() => { totalSelectSeat(3); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>3</span>
-                        <span onClick={() => { totalSelectSeat(4); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>4</span>
-                        <span onClick={() => { totalSelectSeat(5); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>5</span>
-                        <span onClick={() => { totalSelectSeat(6); handleClose() }} style={{ borderRadius: "50%", background: "#E62429", height: 25, width: 25, textAlign: "center", cursor: "pointer" }}>6</span>
+                        <span className="btn3" id="seat1" onClick={() => { totalSelectSeat(1); handleClose() }}>1</span>
+                        <span className="btn3" onClick={() => { totalSelectSeat(2); handleClose() }}>2</span>
+                        <span className="btn3" onClick={() => { totalSelectSeat(3); handleClose() }}>3</span>
+                        <span className="btn3" onClick={() => { totalSelectSeat(4); handleClose() }}>4</span>
+                        <span className="btn3" onClick={() => { totalSelectSeat(5); handleClose() }}>5</span>
+                        <span className="btn3" onClick={() => { totalSelectSeat(6); handleClose() }}>6</span>
+                    </div>
+                    <div>
+                        _____________________________
+                    </div>
+                    <div className="price">
+                        Price: Rs. 150
                     </div>
                 </div>
             </Modal>
             <div id="seat">
                 <ul className="showcase">
                     <li>
-                        <div className="seat"></div>
+                        <div className="vacant"></div>
                         <small>Available</small>
                     </li>
                     <li>
@@ -121,16 +129,16 @@ export default function BookSeat() {
                 </ul>
                 <ul>
                 </ul>
-                <div className="container" style={{ padding: "5rem" }}>
-                    <div className="screen">
+                <div className="container m-2" style={{ paddingBottom: "3rem"}}>
+                <div className="screen">
                     </div>
-                    <div className="row">
+                    <div className="row" style={{paddingTop:'3rem'}}>
                         {
                             seat.map(item => (
                                 item === true ?
                                     <b className="selected" onClick={Book.bind(this, index + 1)} >{index = index + 1}</b>
                                     :
-                                    <b className="seat" onClick={Book.bind(this, index + 1)} >{index = index + 1} </b>
+                                    <b className="vacant" onClick={Book.bind(this, index + 1)} >{index = index + 1} </b>
                             ))
                         }
                     </div>

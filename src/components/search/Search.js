@@ -26,6 +26,7 @@ export default function Search() {
                 setcard(data.results);
                 setTotalPage(data.total_pages)
             })
+            .catch(err => console.error(err))
     };
 
     return (
@@ -41,9 +42,7 @@ export default function Search() {
                                     <Modal.Title>{search}</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                    <Alert variant="danger" className="m-4">
-                                        No Data Found
-                                    </Alert>
+                                    <Alert variant="danger" id="noData" className="m-4">No Data Found</Alert>
                                 </Modal.Body>
                             </Modal.Dialog>
                             :

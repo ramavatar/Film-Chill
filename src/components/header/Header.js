@@ -18,7 +18,7 @@ export default function Header() {
                      <section className="header">
                          <nav className="navbar navbar-expand-sm fixed-top" style={{ backgroundColor: 'rgb(51,53,70)' }}>
                              <div className="container-fluid">
-                                 <a className="navbar-brand" href="#" > 🅵🅸🅻🅼&🅲🅷🅸🅻🅻 </a>
+                                 <a className="navbar-brand" id="brandName" href="#" >🅵🅸🅻🅼&🅲🅷🅸🅻🅻</a>
                                  <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{color:'brown'}}>
                                      <ul className="navbar-nav m-auto">
                                          <li className="nav-item">
@@ -31,7 +31,7 @@ export default function Header() {
                                      <ul className="navbar-nav ml-auto mr-4">
                                          {
                                              localStorage.getItem("token") ?
-                                                 <nav>
+                                                 <nav id="logout">
                                                      <NavDropdown title={localStorage.getItem("token")} >
                                                          <li className="nav-item">
                                                              <a href="/logout" style={{ textDecoration: 'none', paddingLeft: '10%', color: 'black' }}>Logout<i className='fa fa-sign-in' style={{ paddingLeft: '10%' }}></i></a>
@@ -60,7 +60,7 @@ export default function Header() {
                              <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                  <ul className="navbar-nav me-auto">
                                      <li className="nav-item">
-                                         <a href="/movies" className="nav-link" aria-current="page">Movies</a>
+                                         <a href="/" id="Movies" className="nav-link" aria-current="page">Movies</a>
                                      </li>
                                      {
                                          localStorage.getItem("token") ?
@@ -70,10 +70,10 @@ export default function Header() {
                                              : null
                                      }
                                      <li className="nav-item">
-                                         <a href="/filter" className="nav-link" aria-current="page">Filter</a>
+                                         <a href="/filter" id="Filter" className="nav-link" aria-current="page">Filter</a>
                                      </li>
                                      <li className="nav-item">
-                                         <a href="/" className="nav-link" aria-current="page">AboutUs</a>
+                                         <a href="/about"  id="AboutUs" className="nav-link" aria-current="page">AboutUs</a>
                                      </li>
                                  </ul>
                              </div>

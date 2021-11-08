@@ -65,7 +65,7 @@ export default function FavoritesMovies() {
                                         badgeContent={item.rating}
                                         color={item.rating > 7 ? "primary" : "secondary"}
                                     />
-                                    <img src={item.image} style={{ height: '15rem' }} data-testid="image" className="card-img-top" alt="No image Found" onClick={displayDetails.bind(this, item.id)} />
+                                    <img src={item.image} style={{ height: '15rem' }} id="image" className="card-img-top" alt="No image Found" onClick={displayDetails.bind(this, item.key)} />
                                     <div className="card-body">
                                         <h6 className="card-title">{item.title}</h6>
                                         <p className="card-text">
@@ -74,7 +74,7 @@ export default function FavoritesMovies() {
                                             </a>
                                             <span className="fa fa-thumbs-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                         </p>
-                                        <button data-testid="btnReadLater" className="btn btn-warning m-2 align-bottom" onClick={Book.bind(this, item.id)}>Book Movie</button>
+                                        <button id="book" className="btn btn-warning m-2 align-bottom" onClick={Book.bind(this, item.key)}>Book Movie</button>
                                     </div>
                                 </div>
                             </div>

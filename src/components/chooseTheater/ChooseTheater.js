@@ -56,7 +56,7 @@ export default function Book() {
                             <th scope="row">IP Cinemas</th>
                             <td><a href={`/book/IP Cinemas/${movieName}/10:00AM`} className="btn btn-outline-success">10:00 AM</a></td>
                             <td><a href={`/book/IP Cinemas/${movieName}/1:00PM`} className="btn btn-outline-success">1:00 PM</a></td>
-                            <td><a href={`/book/IP Cinemas/${movieName}/4:00PM`} className="btn btn-outline-success">4:00 PM</a></td>
+                            <td><a href={`/book/IP Cinemas/${movieName}/4:00PM`} id="theatre" className="btn btn-outline-success">4:00 PM</a></td>
                             <td><a href={`/book/IP Cinemas/${movieName}/7:00PM`} className="btn btn-outline-success">7:00 PM</a></td>
                         </tr>
                     </tbody>

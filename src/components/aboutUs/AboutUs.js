@@ -9,7 +9,7 @@ export default function AboutUs() {
         <>
             <Header />
             <div className="about-section">
-                <h1>About Us</h1>
+                <h1 id="about">About Us</h1>
                 <p>We Specialize in Providing Best User Experience</p>
                 <p>THE WORLD IS EVOLVING AND SO ARE WE</p>
                 <p>
@@ -25,7 +25,7 @@ export default function AboutUs() {
                 </p>
             </div>
 
-            <h2>Our Team</h2>
+            <h2 id="team">Our Team</h2>
 
             <div className="container-fluid">
                 <div className="row" style={{ padding: '2rem', paddingBottom: '6rem' }}>
@@ -33,7 +33,7 @@ export default function AboutUs() {
                         <img src={kirti} className="card-img-top" style={{ width: "30%", height: "25vh" }} alt="No Image Found" />
                         <div className="card-body">
                             <h4 className="card-title">Kirti Yadav</h4>
-                            <p class="card-text">React JS Developer</p>
+                            <p className="card-text">React JS Developer</p>
                             <p className="card-text">
                                 <b className="fa fa-envelope"> kirti.yadav2@globallogic.com</b>
                             </p>
@@ -43,7 +43,7 @@ export default function AboutUs() {
                         <img src={ram} className="card-img-top" style={{ width: "30%", height: "25vh" }} alt="No Image Found" />
                         <div className="card-body">
                             <h4 className="card-title">Ram Upadhyay</h4>
-                            <p class="card-text">React JS Developer</p>
+                            <p className="card-text">React JS Developer</p>
                             <p className="card-text">
                                 <b className="fa fa-envelope"> ram.upadhyay@globallogic.com</b>
                             </p>
@@ -53,7 +53,7 @@ export default function AboutUs() {
                         <img src={gl} className="card-img-top" style={{ width: "30%", height: "25vh" }} alt="No Image Found" />
                         <div className="card-body">
                             <h4 className="card-title">Global Logic</h4>
-                            <p class="card-text">Hitachi Group Company</p>
+                            <p className="card-text">Hitachi Group Company</p>
                             <p className="card-text">
                                 <b className="fa fa-envelope"> info@globallogic.com</b>
                             </p>

@@ -34,6 +34,7 @@ export default function Card(props) {
                 })
                 setFavorites(arr);
             })
+            .catch(err => console.error(err))
     }, [])
 
     const addFavorites = () => {
@@ -79,11 +80,11 @@ export default function Card(props) {
                     <p className="card-text">
                         {
                             heart ?
-                                <a If href="/movies">
+                                <a If href="/">
                                     <span class="fa fa-heart m-2" style={{ color: 'red', float: 'left' }} onClick={RemoveFavorites.bind(this, props.id)}></span>
                                 </a>
                                 :
-                                <a If href="/movies">
+                                <a If href="/">
                                     <span class="fa fa-heart-o m-2" style={{ color: 'red', float: 'left' }} onClick={addFavorites}></span>
                                 </a>
                         }

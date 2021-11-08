@@ -19,14 +19,15 @@ export default function Details() {
                 console.log(data)
                 setdetails(data)
             })
-
+            .catch(err => console.error(err))
+            
         fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key}&language=en-US`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 setVideo(data.results[0]?.key)
             })
-
+            .catch(err => console.error(err))
     }, [])
 
     const Book = (id) => {

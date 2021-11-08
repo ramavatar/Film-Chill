@@ -19,6 +19,7 @@ export default function FilterBestDrama() {
                 setcard(data.results)
                 setTotalPage(data.total_pages)
             })
+            .catch(err => console.error(err))
     }
 
     useEffect(() => {

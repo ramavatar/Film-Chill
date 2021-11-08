@@ -11,6 +11,12 @@
       "email": "ram@gmail.com",
       "password": "Ram@123",
       "id": 2
+    },
+    {
+      "username": "ram",
+      "email": "ram@gl.com",
+      "password": "ram@12345",
+      "id": 3
     }
   ],
   "favorites": [
@@ -24,15 +30,6 @@
       "id": 1
     },
     {
-      "key": 524434,
-      "email": "ram@gmail.com",
-      "title": "Eternals",
-      "image": "https://image.tmdb.org/t/p/w500/6AdXwFTRTAzggD2QUTt5B7JFGKL.jpg",
-      "rating": 7.1,
-      "voting": 361,
-      "id": 2
-    },
-    {
       "key": 550988,
       "email": "kirti@globallogic.com",
       "title": "Free Guy",
@@ -40,7 +37,89 @@
       "rating": 7.8,
       "voting": 3410,
       "id": 3
+    },
+    {
+      "key": 768449,
+      "email": "kirti@globallogic.com",
+      "title": "American Badger",
+      "image": "https://image.tmdb.org/t/p/w500/8mO2ZTTOnLnaEQd1sNZAE2XBoOg.jpg",
+      "rating": 6.5,
+      "voting": 12,
+      "id": 4
+    },
+    {
+      "key": 610253,
+      "email": "kirti@globallogic.com",
+      "title": "Halloween Kills",
+      "image": "https://image.tmdb.org/t/p/w500/qmJGd5IfURq8iPQ9KF3les47vFS.jpg",
+      "rating": 7,
+      "voting": 1109,
+      "id": 5
     }
   ],
-  "BookedMovies": []
+  "BookedMovies": [
+    {
+      "email": "ram@gmail.com",
+      "theaterName": "Carnivals",
+      "timing": "5:00PM",
+      "SeatNo": 24,
+      "movie": "Dune",
+      "isBooked": true,
+      "id": 1
+    },
+    {
+      "email": "ram@gmail.com",
+      "theaterName": "Carnivals",
+      "timing": "5:00PM",
+      "SeatNo": 47,
+      "movie": "Dune",
+      "isBooked": true,
+      "id": 2
+    },
+    {
+      "email": "ram@gmail.com",
+      "theaterName": "Carnivals",
+      "timing": "5:00PM",
+      "SeatNo": 31,
+      "movie": "Dune",
+      "isBooked": true,
+      "id": 3
+    },
+    {
+      "email": "ram@gmail.com",
+      "theaterName": "Carnivals",
+      "timing": "5:00PM",
+      "SeatNo": 74,
+      "movie": "Dune",
+      "isBooked": true,
+      "id": 4
+    },
+    {
+      "email": "ram@gmail.com",
+      "theaterName": "IP Cinemas",
+      "timing": "4:00PM",
+      "SeatNo": 49,
+      "movie": "Dune",
+      "isBooked": true,
+      "id": 5
+    },
+    {
+      "email": "ram@gmail.com",
+      "theaterName": "IP Cinemas",
+      "timing": "4:00PM",
+      "SeatNo": 73,
+      "movie": "Dune",
+      "isBooked": true,
+      "id": 6
+    },
+    {
+      "email": "ram@gmail.com",
+      "theaterName": "IP Cinemas",
+      "timing": "4:00PM",
+      "SeatNo": 26,
+      "movie": "438631",
+      "isBooked": true,
+      "id": 7
+    }
+  ]
 }

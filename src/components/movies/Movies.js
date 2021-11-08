@@ -20,6 +20,7 @@ export default function Dashboard() {
                 setmovieApi(data.results);
                 setTotalPage(data.total_pages)
             })
+            .catch(err => console.error(err))
       };
 
     useEffect(() => {

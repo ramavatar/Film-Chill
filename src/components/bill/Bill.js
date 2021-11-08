@@ -34,6 +34,7 @@ export default function Bill() {
                 setTheater(name)
                 setLength(l);
             })
+            .catch(err => console.error(err))
     }, [])
 
     return (
@@ -45,10 +46,11 @@ export default function Bill() {
                         <center><b style={{color:'white'}}>Film&Chill Booking</b></center>
                     </div>
                     <div class="card-body text-primary">
+                        <h4 class="card-title d-flex justify-content-center">𝕽𝖘 150 𝖕𝖊𝖗 𝕿𝖎𝖈𝖐𝖊𝖙</h4>
                         <div class="card-text">Movie Title : {movieName}</div>
-                        <div class="card-text">Selected Seats : {seat} </div>
+                        <div class="card-text">Seat Number: {seat} </div>
                         <div class="card-text">Timing :  {showTiming}</div>
-                        <div class="card-text">Amount : Rs {150*Length}</div>
+                        <div class="card-text">Total Amount : Rs {150*Length}</div>
                         
                         <div class="card bg-info mt-2">
                             <div class="first p-3 px-4">

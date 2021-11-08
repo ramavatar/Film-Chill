@@ -78,22 +78,22 @@ export default function Register() {
                   </div>
                   <div className="mb-2">
                      <label><b>UserName</b></label>
-                     <input type="text" className="form-control" onChange={(e) => setUserName(e.target.value)} placeholder="UserName" />
+                     <input type="text" id="name" className="form-control" onChange={(e) => setUserName(e.target.value)} placeholder="UserName" />
                   </div>
                   <div className="mb-2">
                      <label><b>e-mail</b></label>
-                     <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+                     <input type="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="email" />
                   </div>
                   <div className="mb-2">
                      <label><b>Password</b></label>
-                     <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                     <input type="password" id="pswd" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                   </div>
                   <div className="mb-4">
                      <label><b>Re-Enter Password</b></label>
-                     <input type="password" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
+                     <input type="password" id="confirm" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
                   </div>
                   <div className="mb-2">
-                     <button className="btn btn-warning col-12" onClick={RegisterHandeller}><b>SignUp</b></button>
+                     <button id="buttonRegister" className="btn btn-warning col-12" onClick={RegisterHandeller}><b>SignUp</b></button>
                   </div>
                </div>
             </div>

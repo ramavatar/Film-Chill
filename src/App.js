@@ -19,6 +19,7 @@ import forgetPassword from './components/forgetPassword/forgetPassword';
 import ChooseTheater from './components/chooseTheater/ChooseTheater';
 import BookSeat from './components/bookSeat/BookSeat';
 import Bill from './components/bill/Bill';
+import Header from './components/header/Header';
 function App() {
   return (
     <div>
@@ -26,10 +27,10 @@ function App() {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/movies" component={Movies} />
+          <Route exact path="/" component={Movies} />
           <Route exact path="/favorites" component={() => localStorage.getItem("token") ? <Favorites /> : <Redirect to="/login" />} />
           <Route exact path="/bookNow" component={BookNow} />
-          <Route exact path="/" component={AboutUs} />
+          <Route exact path="/about" component={AboutUs} />
           <Route exact path="/password" component={forgetPassword} />
           <Route exact path="/filter" component={Filter} />
           <Route exact path="/filter/highRated" component={FilterHighRated} />

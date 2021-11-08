@@ -25,7 +25,7 @@ export default function Login() {
                   if (item.email === Email && item.password === Password) {
                      cout = cout + 1;
                      localStorage.setItem('token', Email);
-                     history.push('/movies');
+                     history.push('/');
                   }
                })
                if (cout === 0) {
@@ -33,12 +33,13 @@ export default function Login() {
                   localStorage.clear();
                }
             })
+            .catch(err => console.error(err))
       }
    }
    return (
       <>
          <Header />
-         <div className="container mt-4" style={{paddingBottom:'2rem'}}>
+         <div className="container mt-4" id="Login" style={{paddingBottom:'2rem'}}>
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">
                   <img src="https://ck12live.s3.ap-south-1.amazonaws.com/user/5f688627ac992228651c21b1/classroom/original/1607234971537-login.png" alt="No image found" style={{width:'100%'}} />

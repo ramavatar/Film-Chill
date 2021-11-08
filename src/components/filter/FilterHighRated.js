@@ -7,7 +7,7 @@ import CustomPagination from '../pagination/Pagination';
 export default function FilterHighRated() {
     const key = "04c35731a5ee918f014970082a0088b1";
     const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(4);
     const [totalpage, setTotalPage] = useState("");
     const [card, setcard] = useState([])
 
@@ -19,6 +19,7 @@ export default function FilterHighRated() {
                 setcard(data.results)
                 setTotalPage(data.total_pages)
             })
+            .catch(err => console.error(err))
     }
 
     useEffect(() => {

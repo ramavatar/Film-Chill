@@ -22,7 +22,7 @@
   .container {
     perspective: 1000px;
   }
-  .seat {
+  .vacant {
     background-color: #444451;
     height: 40px;
     width: 50px;
@@ -31,7 +31,7 @@
     border-top-right-radius: 10px;
   }
 
-  .seat:hover{
+  .vacant:hover{
     background-color:green;
   }
 
@@ -71,30 +71,44 @@
     color: black;
     height: 75px;
     width: 75%;
-    margin: 20px auto;
+    margin: 10px auto;
     transform: rotateX(-45deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+  }
+
+  .btn3{
+    border-radius: 50px;
+    background-color: crimson;
+    color: black;
+    width: 25px;
+    text-align: center;
+  }
+  .btn3:hover {
+    background-color: rgb(165, 165, 248);
+  }
+  .price {
+    padding: 15px;
+    text-align: right;
   }
   small{
     color: #fff;
   }
-
-@media only screen and (max-width: 500px) {
-  .me-auto{
-    margin-top: 80px;
+  @media only screen and (max-width: 500px) {
+    .me-auto{
+      margin-top: 80px;
+    }
+    button.navbar-toggler{
+      position: absolute;
+      border: 0.5px solid black;
+      top: 5px;
+      right: 0;
+      color: white;
+      background-color: #444451;
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.7rem;
+      margin-right: 5px;
+    }
   }
-  button.navbar-toggler{
-    position: absolute;
-    border: 0.5px solid black;
-    top: 5px;
-    right: 0;
-    color: white;
-    background-color: #444451;
-    z-index: 10000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.7rem;
-    margin-right: 5px;
-  }
-}
