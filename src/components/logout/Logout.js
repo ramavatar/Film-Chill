@@ -5,6 +5,7 @@ export default function Logout() {
     return (
         <>
             <div>
+                {/* deleting the loged in details from local storage */}
                 {localStorage.clear()}
                 <Login />
             </div>

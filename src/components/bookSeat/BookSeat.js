@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import './BookSeat.css';
 import Modal from '@mui/material/Modal';
 export default function BookSeat() {
+    // seat booked by the user details and setting
     const history = useHistory();
     const [numbSeat, setNumbSeat] = useState(null);
     const [noSeat, setNoSeat] = useState(0);
@@ -21,12 +22,15 @@ export default function BookSeat() {
     let arr = [];
     const totalSeat = 100;
     let seatDetails = []
+    // displaying the seats layout
     for (var i = 0; i < totalSeat; i++) {
         seatDetails.push(false)
     }
+    // redirecting to the bill component by passing other info
     if (selected === numbSeat) {
         history.push(`/bill/${movieName}/${theater}`);
     }
+    // selection of seats
     const getSelected = () => {
         fetch(`http://localhost:3001/BookedMovies`)
             .then(res => res.json())
@@ -41,6 +45,7 @@ export default function BookSeat() {
             })
             .catch(err => console.error(err))
     }
+    // getting the data from json server
     const getData = () => {
         fetch(`http://localhost:3001/BookedMovies`)
             .then(res => res.json())
@@ -65,6 +70,7 @@ export default function BookSeat() {
         setSelected(noSeat);
     }, [seat]);
 
+    // for selecting number of seats- and saving the details to json server
     const Book = (seatSelected) => {
         if (selected < numbSeat) {
             let isBooked = true;
@@ -85,6 +91,7 @@ export default function BookSeat() {
     return (
         <>
             <Header />
+            {/* modal for asking the number of seats a user wants to book */}
             <Modal
                 disableEscapeKeyDown
                 onBackdropClick={() => window.location.reload()}
@@ -98,6 +105,7 @@ export default function BookSeat() {
                     justifyContent: "center"
                 }}
             >
+                {/* calling the function for the number clicked by the user to select the number of seats */}
                 <div style={{ background: "#333", padding: "30px" , textAlign: "center" , color:'#fff'}}>
                     <div className="mb-4">How Many Seats ?</div>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -117,6 +125,7 @@ export default function BookSeat() {
                 </div>
             </Modal>
             <div id="seat">
+                {/* showing if seats are available or unavailable */}
                 <ul className="showcase">
                     <li>
                         <div className="vacant"></div>
@@ -132,6 +141,7 @@ export default function BookSeat() {
                 <div className="container m-2" style={{ paddingBottom: "3rem"}}>
                 <div className="screen">
                     </div>
+                    {/* checking if seats are unbooked then are clickable other than the booked seats are unclickable */}
                     <div className="row" style={{paddingTop:'3rem'}}>
                         {
                             seat.map(item => (

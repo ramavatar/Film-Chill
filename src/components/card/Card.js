@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Badge } from "@material-ui/core";
 import { getAccordionDetailsUtilityClass } from '@mui/material';
 export default function Card(props) {
+    // setting the title, image, email, rating, voting, id ,heart 
     const history = useHistory()
     const [title, setTitle] = useState("")
     const [image, setImage] = useState("")
@@ -21,6 +22,7 @@ export default function Card(props) {
         setId(props.id)
         setEmail(localStorage.getItem("token"))
         var arr = [];
+        // fecthing from json server after checking user's email
         fetch("http://localhost:3001/favorites")
             .then(res => res.json())
             .then(data => {
@@ -37,6 +39,7 @@ export default function Card(props) {
             .catch(err => console.error(err))
     }, [])
 
+    // storing the favourite clicked movie to json server from movie, filter and search if loged in other wise will be redirected to login page
     const addFavorites = () => {
         if (localStorage.getItem("token")) {
             fetch("http://localhost:3001/favorites",
@@ -53,6 +56,7 @@ export default function Card(props) {
         }
     }
 
+    // remove from favourite function
     const RemoveFavorites = (id) => {
         allFavorites.map(item=>{
             if(item.key===id){
@@ -63,11 +67,13 @@ export default function Card(props) {
         })
     }
 
+    // to display details of the movie redirecting to details component while passing id
     const displayDetails = (id) => {
         history.push(`/details/${id}`)
     }
 
     return (
+        // card to display the movie card
         <div className="conainer col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{ marginTop: '2%' }}>
             <div className="card m-2">
                 <Badge

@@ -19,6 +19,7 @@ export default function Search() {
         fetchMovies();
     }, [page]);
 
+    // fetching the searched movie from the api
     const fetchMovies = async () => {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${search}&page=${page}`)
             .then(response => response.json())
@@ -33,6 +34,7 @@ export default function Search() {
 
         <div>
             <Header />
+            {/* if the searched movie is not a correct movie then a modal will be displayed "no data found" and if the movie is valid then then passing it to the card component */}
             <div className="container" style={{ paddingBottom: "4em" }}>
                 <div className="row">
                     {

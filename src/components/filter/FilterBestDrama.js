@@ -5,12 +5,14 @@ import Card from '../card/Card';
 import Header from '../header/Header';
 import CustomPagination from '../pagination/Pagination';
 export default function FilterBestDrama() {
+    // function to filter the best drama movie
     const key = "04c35731a5ee918f014970082a0088b1";
     const IMG_URL = 'https://image.tmdb.org/t/p/w500';
     const [page, setPage] = useState(4);
     const [totalpage, setTotalPage] = useState("");
     const [card, setcard] = useState([])
 
+    // fecting details from the api
     const fetchDrama = async () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=18&primary_release_year=2021&api_key=${key}&page=${page}`)
             .then(response => response.json())
@@ -30,6 +32,7 @@ export default function FilterBestDrama() {
     return (
         <div>
             <Header />
+            {/* mapping and calling card component */}
             <div className="container-fluid" style={{ paddingBottom: "6em" }}>
                 <div className="row">
                     {

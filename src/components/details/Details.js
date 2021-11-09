@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { Badge } from "@material-ui/core";
 export default function Details() {
+    // using use history and use state for setting data and redirecting page
     const history = useHistory();
     const [details, setdetails] = useState([])
     const [video, setVideo] = useState();
@@ -12,6 +13,7 @@ export default function Details() {
     const key = "04c35731a5ee918f014970082a0088b1";
     const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
+    // fetching from api with the particular id and key
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US`)
             .then(response => response.json())
@@ -21,6 +23,7 @@ export default function Details() {
             })
             .catch(err => console.error(err))
             
+            // setting watch trailer and home page button
         fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key}&language=en-US`)
             .then(response => response.json())
             .then(data => {
@@ -30,6 +33,7 @@ export default function Details() {
             .catch(err => console.error(err))
     }, [])
 
+    // redirecting to choose theatre if user clicked on the book movie button
     const Book = (id) => {
         history.push(`/choosetheater/${id}`)
     }
@@ -37,6 +41,7 @@ export default function Details() {
     return (
         <>
             <Header />
+            {/* card to display the details */}
             <div className="container" style={{ paddingBottom: "2em" }}>
                 <div className="row">
                     <div className="card m-4" style={{ flexDirection: 'row' }} >

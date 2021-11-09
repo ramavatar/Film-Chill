@@ -8,6 +8,7 @@ export default function AboutUs() {
     return (
         <>
             <Header />
+            {/* will be displayed on the screen */}
             <div className="about-section">
                 <h1 id="about">About Us</h1>
                 <p>We Specialize in Providing Best User Experience</p>
@@ -21,10 +22,10 @@ export default function AboutUs() {
                     We care our users and also provide the with all the new essential features.
                 </p>
                 <p>
-                    We are happy to have you ! Thankyou for choosing us !
+                    We are happy to have you! Thank you for choosing us!
                 </p>
             </div>
-
+            {/* About our team with the contact details, image and designation */}
             <h2 id="team">Our Team</h2>
 
             <div className="container-fluid">

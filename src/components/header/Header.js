@@ -8,12 +8,14 @@ export default function Header() {
     const [search, setsearch] = useState("");
     const history = useHistory();
     
+    // search option so user can directly search the desired movie
     const searchMovies = () => {
         history.push(`/${search}`)
     }
 
     return (
         <div>
+            {/* navbar to show the logo, search option and login logout function */}
                  <div data-bs-spy="scroll" data-bs-target=".navbar">
                      <section className="header">
                          <nav className="navbar navbar-expand-sm fixed-top" style={{ backgroundColor: 'rgb(51,53,70)' }}>
@@ -52,6 +54,7 @@ export default function Header() {
                              </div>
                          </nav>
                      </section>
+                     {/* navbar to show the other functiolity, movie, filter, favourite and about us */}
                      <nav id="nav1" className="navbar navbar-expand-sm" style={{ paddingTop: '55px', paddingBottom: '0%' }}>
                          <div className="container-fluid">
                              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

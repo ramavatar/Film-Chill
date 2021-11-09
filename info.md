@@ -1,10 +1,15 @@
 ## Prerequisites
-- Fork this film&chill repository
 - Clone the film&chill repository and cd into it
-- Install dependencies npm install
+- Install dependencies 
+  command: "npm install"
+- Install material UI
+  command: "npm install @mui/material @emotion/react @emotion/styled"
 - Run the json server on port:3001
-- Run the frontend npm start which shall run on port:3000
-- Run Cypress test cases "npm run cypress"
+  command: "json-server --watch db.json --port 3001"
+- Run the code on chrome which shall run on port:3000
+ command: "npm start"
+- Run Cypress test cases 
+  command: "npm run cypress"
 
 ## Know your json server
 On running json server, following apis would be available for your use -

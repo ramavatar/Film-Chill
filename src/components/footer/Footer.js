@@ -2,6 +2,7 @@ import React from 'react'
 import './Footer.css'
 export default function Footer() {
     return (
+        // footer will be displayed
         <div className="footer">
             <b data-testid="copyright" className="copyrights-name m-2">Film & Chill &copy; 2021</b>
             <div>

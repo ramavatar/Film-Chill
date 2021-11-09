@@ -12,6 +12,7 @@ export default function Dashboard() {
     const [totalpage, setTotalPage] = useState("");
     const [movieApi, setmovieApi] = useState([])
 
+    // fetching details from the api
     const fetchMovies= async () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&page=${page}`)
             .then(response => response.json())
@@ -31,6 +32,7 @@ export default function Dashboard() {
     return (
         <>
             <Header />
+            {/* card to display the details of the movie with other functions */}
             <div>
                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">

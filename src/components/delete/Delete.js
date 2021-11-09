@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Header from '../header/Header'
 export default function DeleteAccount() {
+    // use state and use history for storing and setting data
     const history = useHistory();
     const [allUsers, setAllUsers] = useState([])
     const [id, setId] = useState([])
     var arr = [];
-    console.log("haha")
     let cout = 0;
+    
+    // fetching from the user if user is registered or not
     fetch("http://localhost:3001/register")
         .then(res => res.json())
         .then(data => {
@@ -30,6 +32,7 @@ export default function DeleteAccount() {
             console.error(err);
         });
 
+        // remove account function
     const RemoveUser = () => {
         let filteredUser=allUsers.filter(x=>x.id !==id)
         fetch(`http://localhost:3001/register/${id}`, {
@@ -42,6 +45,7 @@ export default function DeleteAccount() {
     return (
         <>
         <Header/>
+        {/* remove account display content */}
         <div className="row">
             <div className="col-6 mt-4">
             <img src="https://img4.wsimg.com/support/images/office365/32427/070720/O365-Delete-account-02.png" style={{width:"100%"}}/>

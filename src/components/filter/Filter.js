@@ -15,14 +15,17 @@ export default function Filter() {
         history.push("/");
     }
 
+    // to display popular filtered movie
     const displayPopular = () => {
         history.push('filter/popular')
     }
 
+    // display highest rated filtered movie
     const displayHighestRated = () => {
         history.push('filter/highRated')
     }
     
+    // display kids filtered movie
     const displaykidsMovies = () => {
         history.push('filter/bestDrama')
     }
@@ -34,6 +37,7 @@ export default function Filter() {
     return (
         <div id="filter">
             <Header />
+            {/* modal for user to choose an then passing it to card component */}
             <Modal show={show} onHide={handleModal}>
                 <Modal.Header closeButton>Filter movie </Modal.Header>
                 <Modal.Body>

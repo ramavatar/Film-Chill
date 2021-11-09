@@ -9,13 +9,16 @@ export default function Login() {
    const [Password, setPassword] = useState('')
 
    var cout = 0;
+   // asking for email and password
    const LoginHandeller = () => {
       if (Email == "") {
          document.getElementById("invalid").innerHTML = "Enter UserName";
       }
+
       else if (Password == "") {
          document.getElementById("invalid").innerHTML = "Enter Password";
       }
+      // fetching if user is registered or not
       else {
          fetch("http://localhost:3001/register")
             .then(res => res.json())
@@ -39,6 +42,7 @@ export default function Login() {
    return (
       <>
          <Header />
+         {/* login ui part */}
          <div className="container mt-4" id="Login" style={{paddingBottom:'2rem'}}>
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">

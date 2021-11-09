@@ -3,12 +3,14 @@ import Header from '../header/Header';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 export default function Register() {
+   // use history and use state for redirecting and setting data
    const history = useHistory()
    const [username, setUserName] = useState('')
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
    const [confirmPassword, setConfirmPassword] = useState('')
 
+   // vallidation used
    const PasswordHandeller = () => {
       var cout = 0;
       if (username == "") {
@@ -27,6 +29,7 @@ export default function Register() {
          document.getElementById("msg").innerHTML = "Password is too Small";
       }
       else {
+         // password entered should be same as confirmed password and fetching from json server
          if (password == confirmPassword) {
             fetch("http://localhost:3001/register")
                .then(res => res.json())
@@ -51,6 +54,7 @@ export default function Register() {
                      }
                   })
                   
+                  // if user is registered then password will be updated otherwise not
                   if (cout == 0) {
                     document.getElementById("msg").innerHTML = "Not a Registered User !";
                   }
@@ -68,6 +72,7 @@ export default function Register() {
    return (
       <>
          <Header />
+         {/* ui part of the forget password */}
          <div className="container-fluid">
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">

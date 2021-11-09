@@ -1,21 +1,21 @@
 {
   "Register": [
     {
-      "username": "Kirti Yadav",
+      "username": "Kirti",
       "email": "kirti@globallogic.com",
-      "password": "Kirti@1234",
+      "password": "Kirti@123",
       "id": 1
+    },
+    {
+      "username": "kirti",
+      "email": "kirti@gmail.com",
+      "password": "Kirti@1234",
+      "id": 2
     },
     {
       "username": "ram",
       "email": "ram@gmail.com",
       "password": "Ram@123",
-      "id": 2
-    },
-    {
-      "username": "Nishant",
-      "email": "ramavataru@gmail.com",
-      "password": "1234567",
       "id": 3
     },
     {
@@ -23,86 +23,62 @@
       "email": "ram@gl.com",
       "password": "ram@12345",
       "id": 4
-    },
-    {
-      "username": "Nishant",
-      "email": "ram1@gmail.com",
-      "password": "Ram@123",
-      "id": 5
     }
   ],
   "favorites": [
     {
-      "key": 438631,
-      "email": "ram@gmail.com",
-      "title": "Dune",
-      "image": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
-      "rating": 8,
-      "voting": 3446,
+      "key": 474395,
+      "email": "kirti@gmail.com",
+      "title": "Teen Titans Go! To the Movies",
+      "image": "https://image.tmdb.org/t/p/w500/mFHihhE9hlvJEk2f1AqdLRaYHd6.jpg",
+      "rating": 7.4,
+      "voting": 887,
       "id": 1
     },
     {
-      "key": 550988,
-      "email": "kirti@globallogic.com",
-      "title": "Free Guy",
-      "image": "https://image.tmdb.org/t/p/w500/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
-      "rating": 7.8,
-      "voting": 3410,
-      "id": 3
-    },
-    {
-      "key": 768449,
-      "email": "kirti@globallogic.com",
-      "title": "American Badger",
-      "image": "https://image.tmdb.org/t/p/w500/8mO2ZTTOnLnaEQd1sNZAE2XBoOg.jpg",
-      "rating": 6.5,
-      "voting": 12,
-      "id": 4
-    },
-    {
-      "key": 610253,
-      "email": "kirti@globallogic.com",
-      "title": "Halloween Kills",
-      "image": "https://image.tmdb.org/t/p/w500/qmJGd5IfURq8iPQ9KF3les47vFS.jpg",
-      "rating": 7,
-      "voting": 1109,
-      "id": 5
+      "key": 580489,
+      "email": "ram@gmail.com",
+      "title": "Venom: Let There Be Carnage",
+      "image": "https://image.tmdb.org/t/p/w500/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
+      "rating": 6.8,
+      "voting": 1699,
+      "id": 2
     }
   ],
   "BookedMovies": [
     {
-      "email": "ram@gmail.com",
-      "theaterName": "Carnivals",
-      "timing": "5:00PM",
-      "SeatNo": 24,
-      "movie": "Dune",
+      "email": "kirti@globallogic.com",
+      "theaterName": "IP Cinemas",
+      "timing": "4:00PM",
+      "SeatNo": 34,
+      "movie": "Venom: Let There Be Carnage",
       "isBooked": true,
       "id": 1
     },
     {
-      "email": "ram@gmail.com",
-      "theaterName": "Carnivals",
-      "timing": "5:00PM",
-      "SeatNo": 47,
-      "movie": "Dune",
+      "email": "kirti@globallogic.com",
+      "theaterName": "IP Cinemas",
+      "timing": "4:00PM",
+      "SeatNo": 23,
+      "movie": "Venom: Let There Be Carnage",
       "isBooked": true,
       "id": 2
     },
     {
-      "email": "ram@gmail.com",
-      "theaterName": "Carnivals",
-      "timing": "5:00PM",
-      "SeatNo": 31,
-      "movie": "Dune",
+      "email": "kirti@gmail.com",
+      "theaterName": "IP Cinemas",
+      "timing": "4:00PM",
+      "SeatNo": 23,
+      "movie": "Teen Titans Go! To the Movies",
       "isBooked": true,
       "id": 3
     },
     {
-      "email": "ram@gmail.com",
-      "theaterName": "Carnivals",
-      "timing": "5:00PM",
-      "SeatNo": 74,
-      "movie": "Dune",
+      "email": "kirti@gmail.com",
+      "theaterName": "IP Cinemas",
+      "timing": "4:00PM",
+      "SeatNo": 85,
+      "movie": "Teen Titans Go! To the Movies",
       "isBooked": true,
       "id": 4
     },
@@ -111,27 +87,9 @@
       "theaterName": "IP Cinemas",
       "timing": "4:00PM",
       "SeatNo": 26,
-      "movie": "Dune",
+      "movie": "Venom: Let There Be Carnage",
       "isBooked": true,
       "id": 5
-    },
-    {
-      "email": "ram@gmail.com",
-      "theaterName": "IP Cinemas",
-      "timing": "4:00PM",
-      "SeatNo": 26,
-      "movie": "Dune",
-      "isBooked": true,
-      "id": 6
-    },
-    {
-      "email": "ram@gmail.com",
-      "theaterName": "IP Cinemas",
-      "timing": "4:00PM",
-      "SeatNo": 26,
-      "movie": "Dune",
-      "isBooked": true,
-      "id": 7
     }
   ]
 }

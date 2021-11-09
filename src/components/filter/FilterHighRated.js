@@ -11,6 +11,7 @@ export default function FilterHighRated() {
     const [totalpage, setTotalPage] = useState("");
     const [card, setcard] = useState([])
 
+    // fetching high rated movie from the api
     const fetchHighRated = async () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?&sort_by=vote_average.desc&api_key=${key}&page=${page}`)
             .then(response => response.json())
@@ -30,6 +31,7 @@ export default function FilterHighRated() {
     return (
         <div>
             <Header />
+            {/* mapping an passing to card component */}
             <div className="container-fluid" style={{ paddingBottom: "6em" }}>
                 <div className="row">
                     {

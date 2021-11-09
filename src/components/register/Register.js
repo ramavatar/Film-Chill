@@ -9,6 +9,7 @@ export default function Register() {
    const [password, setPassword] = useState('')
    const [confirmPassword, setConfirmPassword] = useState('')
 
+   // for registering the user, asking email, and to generate the password
    const RegisterHandeller = () => {
       var cout = 0;
       if (username == "") {
@@ -33,6 +34,7 @@ export default function Register() {
             document.getElementById("msg").innerHTML = "password should contain atleast one number and one special character";
          }
          else {
+            // password and confirm password should be same
             if (password == confirmPassword) {
                fetch("http://localhost:3001/register")
                   .then(res => res.json())
@@ -42,6 +44,7 @@ export default function Register() {
                            cout = cout + 1;
                         }
                      })
+                     // saving the details to the json server
                      if (cout == 0) {
                         fetch("http://localhost:3001/Register", {
                            method: "POST",
@@ -56,6 +59,7 @@ export default function Register() {
                            .then((data) => {
                               console.log(data);
                            });
+                           // redirecting to the login page
                         history.push("/login")
                      }
                      else {
@@ -72,6 +76,7 @@ export default function Register() {
    return (
       <>
          <Header />
+         {/* ui part of the registering */}
          <div className="container-fluid" style={{ paddingBottom: '1rem' }}>
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">

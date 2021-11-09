@@ -3,10 +3,13 @@ import Header from '../header/Header';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 export default function Bill() {
-
+    // will store the users ticket details
     let arr = [];
+    // save the users time for booking the tickets
     let timing = "";
+    // for storing the movie name
     let name = "";
+    // set the seats, theatre name, show timings, name of the movie and theatre name
     const [seat, setSeat] = useState("")
     const [theaterName, setTheater] = useState("")
     const [Length, setLength] = useState("")
@@ -14,6 +17,7 @@ export default function Bill() {
     const { movieName } = useParams();
     const { theater } = useParams();
 
+    // fetching details from the json server according to the user's email that the user have loged in and other info
     useEffect(() => {
         fetch(`http://localhost:3001/BookedMovies`)
             .then(response => response.json())
@@ -40,6 +44,8 @@ export default function Bill() {
     return (
         <div>
             <Header />
+            {/* printing the ticket */}
+            
             <div class="container d-flex justify-content-center mt-2">
                 <div class="card border-success">
                     <div class="card-header bg-success border-success">
@@ -49,7 +55,7 @@ export default function Bill() {
                         <h4 class="card-title d-flex justify-content-center">𝕽𝖘 150 𝖕𝖊𝖗 𝕿𝖎𝖈𝖐𝖊𝖙</h4>
                         <div class="card-text">Movie Title : {movieName}</div>
                         <div class="card-text">Seat Number: {seat} </div>
-                        <div class="card-text">Timing :  {showTiming}</div>
+                        <div class="card-text">Time :  {showTiming}</div>
                         <div class="card-text">Total Amount : Rs {150*Length}</div>
                         
                         <div class="card bg-info mt-2">

@@ -11,6 +11,7 @@ export default function FilterPopular() {
     const [totalpage, setTotalPage] = useState("");
     const [card, setcard] = useState([])
 
+    // fetching popular movie from the api
     const fetchPopular = async () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${key}&page=${page}`)
             .then(response => response.json())
@@ -30,6 +31,7 @@ export default function FilterPopular() {
     return (
         <div>
             <Header />
+            {/* mapping and passing details to card component */}
             <div className="container-fluid" style={{ paddingBottom: "6em" }}>
                 <div className="row">
                     {

@@ -7,8 +7,11 @@ import { Badge } from "@material-ui/core";
 export default function FavoritesMovies() {
     const history = useHistory();
     const [allFavoritesMovies, setFavoritesMovies] = useState([])
+    // srray to store the favourite movies
     var arr = [];
     let cout = 0;
+
+    // fetching from json server matching with the user's email
     fetch("http://localhost:3001/favorites")
         .then(res => res.json())
         .then(data => {
@@ -18,9 +21,11 @@ export default function FavoritesMovies() {
                     cout = cout + 1
                 }
             })
+            // if favourite section is empty, user haven't added any movie to favourite
             if (cout === 0) {
                 history.push("/booknow")
             }
+            // setting the movie in favourite
             setFavoritesMovies(arr)
             console.log(arr);
         })
@@ -28,6 +33,7 @@ export default function FavoritesMovies() {
             console.error(err);
         });
 
+        // remove from favourite section
     const RemoveFavorite = (id) => {
         let filteredFavorite = allFavoritesMovies.filter(x => x.id !== id)
         fetch(`http://localhost:3001/favorites/${id}`, {
@@ -36,6 +42,7 @@ export default function FavoritesMovies() {
         setFavoritesMovies(filteredFavorite)
     }
 
+    // if id of the movie is undefined then display that movie is not in theatre otherwise redirect it to choose theatre component if book movie option is clicked by the user
     const Book = (id) => {
         if (id == undefined) {
             alert("Movies Not in Theater")
@@ -45,6 +52,7 @@ export default function FavoritesMovies() {
         }
     }
 
+    // display movie info function
     const displayDetails = (id) => {
         if (id != undefined) {
             history.push(`/details/${id}`)
@@ -55,6 +63,7 @@ export default function FavoritesMovies() {
     return (
         <>
             <Header />
+            {/* card to display all the favourite movies */}
             <div id="favorites" className="container-fluid" style={{ padding: "2em", paddingTop: '0em', paddingBottom: '6rem' }}>
                 <div className="row">
                     {
