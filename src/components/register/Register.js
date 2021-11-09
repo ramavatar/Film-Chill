@@ -23,56 +23,63 @@ export default function Register() {
       else if (confirmPassword == "") {
          document.getElementById("msg").innerHTML = "Confirm Password Can't be Empty";
       }
-      else if (password.length <= 6) {
-         document.getElementById("msg").innerHTML = "Password is too Small";
-      }
       else {
-         if (password == confirmPassword) {
-            fetch("http://localhost:3001/register")
-               .then(res => res.json())
-               .then(data => {
-                  data.map(item => {
-                     if (item.email === email) {
-                        cout = cout + 1;
-                     }
-                  })
-                  if (cout == 0) {
-                     fetch("http://localhost:3001/Register", {
-                        method: "POST",
-                        headers: {
-                           "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({ username, email, password }),
-                     })
-                        .then((res) => {
-                           return res.json();
-                        })
-                        .then((data) => {
-                           console.log(data);
-                        });
-                     history.push("/login")
-                  }
-                  else {
-                     document.getElementById("msg").innerHTML = "Already Registered !";
-                  }
-               })
+         var minNumberofChars = 6;
+         var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/;
+         if (password.length < minNumberofChars) {
+            document.getElementById("msg").innerHTML = "Password Length must be Atleast 6";
+         }
+         if (!regularExpression.test(password)) {
+            document.getElementById("msg").innerHTML = "password should contain atleast one number and one special character";
          }
          else {
-            document.getElementById("msg").innerHTML = "password and Confirm Password not Matched";
+            if (password == confirmPassword) {
+               fetch("http://localhost:3001/register")
+                  .then(res => res.json())
+                  .then(data => {
+                     data.map(item => {
+                        if (item.email === email) {
+                           cout = cout + 1;
+                        }
+                     })
+                     if (cout == 0) {
+                        fetch("http://localhost:3001/Register", {
+                           method: "POST",
+                           headers: {
+                              "Content-Type": "application/json",
+                           },
+                           body: JSON.stringify({ username, email, password }),
+                        })
+                           .then((res) => {
+                              return res.json();
+                           })
+                           .then((data) => {
+                              console.log(data);
+                           });
+                        history.push("/login")
+                     }
+                     else {
+                        document.getElementById("msg").innerHTML = "Already Registered !";
+                     }
+                  })
+            }
+            else {
+               document.getElementById("msg").innerHTML = "password and Confirm Password not Matched";
+            }
          }
       }
    }
    return (
       <>
          <Header />
-         <div className="container-fluid" style={{paddingBottom:'1rem'}}>
+         <div className="container-fluid" style={{ paddingBottom: '1rem' }}>
             <div className="row">
                <div className="col-sm-12 md-6 col-lg-6 mt-4">
-                  <img src="https://www.iitg.ac.in/vigyanjyoti/images/regd.png" style={{width:'100%'}}/>
+                  <img src="https://www.iitg.ac.in/vigyanjyoti/images/regd.png" style={{ width: '100%' }} />
                </div>
                <div className="col-sm-12 md-6 col-lg-5">
                   <h1 className="mb-4 mt-4">Register</h1>
-                  <hr/>
+                  <hr />
                   <div className="mb-2" id="msg" style={{ color: 'red' }}>
 
                   </div>

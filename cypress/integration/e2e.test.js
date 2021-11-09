@@ -123,14 +123,14 @@ context("test cases for Register a User",()=>{
         cy.get("#msg").should("have.text", "password and Confirm Password not Matched")
     })
 
-    it("Enter Small Password During Registration", () => {
+    it("Password Validation During Registration", () => {
         cy.get("#name").type("ram")
         cy.get("#email").type("film@chill.com")
         cy.get("#pswd").type("Ram")
         cy.get("#confirm").type("Ram")
         cy.get("#buttonRegister").click()
         cy.wait(1000)
-        cy.get("#msg").should("have.text", "Password is too Small")
+        cy.get("#msg").should("have.text", "password should contain atleast one number and one special character")
     })
 
     it("User Already Exist", () => {
