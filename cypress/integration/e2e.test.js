@@ -88,6 +88,7 @@ context("test cases for Search Movie",()=>{
     it("Movie Not Found", () => {
         cy.visit("/ghfd")
         cy.get("#noData").should("have.text", "No Data Found")
+        cy.wait(1000)
     })
 
 })

@@ -11,12 +11,6 @@
       "email": "ram@gmail.com",
       "password": "Ram@123",
       "id": 2
-    },
-    {
-      "username": "ram",
-      "email": "ram@gl.com",
-      "password": "ram@12345",
-      "id": 3
     }
   ],
   "favorites": [
@@ -93,33 +87,6 @@
       "movie": "Dune",
       "isBooked": true,
       "id": 4
-    },
-    {
-      "email": "ram@gmail.com",
-      "theaterName": "IP Cinemas",
-      "timing": "4:00PM",
-      "SeatNo": 49,
-      "movie": "Dune",
-      "isBooked": true,
-      "id": 5
-    },
-    {
-      "email": "ram@gmail.com",
-      "theaterName": "IP Cinemas",
-      "timing": "4:00PM",
-      "SeatNo": 73,
-      "movie": "Dune",
-      "isBooked": true,
-      "id": 6
-    },
-    {
-      "email": "ram@gmail.com",
-      "theaterName": "IP Cinemas",
-      "timing": "4:00PM",
-      "SeatNo": 26,
-      "movie": "438631",
-      "isBooked": true,
-      "id": 7
     }
   ]
 }

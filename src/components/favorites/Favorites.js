@@ -74,7 +74,7 @@ export default function FavoritesMovies() {
                                             </a>
                                             <span className="fa fa-thumbs-up m-2" style={{ float: 'right' }}> {item.voting} Votes</span>
                                         </p>
-                                        <button id="book" className="btn btn-warning m-2 align-bottom" onClick={Book.bind(this, item.key)}>Book Movie</button>
+                                        <button id="book" className="btn btn-warning m-2 align-bottom" onClick={Book.bind(this, item.title)}>Book Movie</button>
                                     </div>
                                 </div>
                             </div>
