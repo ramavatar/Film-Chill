@@ -1,18 +1,6 @@
 {
   "Register": [
     {
-      "username": "Kirti",
-      "email": "kirti@globallogic.com",
-      "password": "Kirti@123",
-      "id": 1
-    },
-    {
-      "username": "kirti",
-      "email": "kirti@gmail.com",
-      "password": "Kirti@1234",
-      "id": 2
-    },
-    {
       "username": "ram",
       "email": "ram@gmail.com",
       "password": "Ram@123",
@@ -27,15 +15,6 @@
   ],
   "favorites": [
     {
-      "key": 474395,
-      "email": "kirti@gmail.com",
-      "title": "Teen Titans Go! To the Movies",
-      "image": "https://image.tmdb.org/t/p/w500/mFHihhE9hlvJEk2f1AqdLRaYHd6.jpg",
-      "rating": 7.4,
-      "voting": 887,
-      "id": 1
-    },
-    {
       "key": 580489,
       "email": "ram@gmail.com",
       "title": "Venom: Let There Be Carnage",
@@ -47,40 +26,22 @@
   ],
   "BookedMovies": [
     {
-      "email": "kirti@globallogic.com",
+      "email": "kirti@gmail.com",
       "theaterName": "IP Cinemas",
       "timing": "4:00PM",
-      "SeatNo": 34,
+      "SeatNo": 23,
       "movie": "Venom: Let There Be Carnage",
       "isBooked": true,
       "id": 1
     },
     {
-      "email": "kirti@globallogic.com",
+      "email": "kirti@gmail.com",
       "theaterName": "IP Cinemas",
       "timing": "4:00PM",
-      "SeatNo": 23,
+      "SeatNo": 44,
       "movie": "Venom: Let There Be Carnage",
       "isBooked": true,
       "id": 2
-    },
-    {
-      "email": "kirti@gmail.com",
-      "theaterName": "IP Cinemas",
-      "timing": "4:00PM",
-      "SeatNo": 23,
-      "movie": "Teen Titans Go! To the Movies",
-      "isBooked": true,
-      "id": 3
-    },
-    {
-      "email": "kirti@gmail.com",
-      "theaterName": "IP Cinemas",
-      "timing": "4:00PM",
-      "SeatNo": 85,
-      "movie": "Teen Titans Go! To the Movies",
-      "isBooked": true,
-      "id": 4
     },
     {
       "email": "ram@gmail.com",
@@ -89,7 +50,7 @@
       "SeatNo": 26,
       "movie": "Venom: Let There Be Carnage",
       "isBooked": true,
-      "id": 5
+      "id": 3
     }
   ]
 }

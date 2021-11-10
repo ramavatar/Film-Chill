@@ -6,7 +6,7 @@ export default function BookNow() {
     // redirecting the page to the home page i.e., movies
     const history = useHistory()
     const back = () => {
-        history.push("/movies")
+        history.push("/")
     }
     return (
         <>
