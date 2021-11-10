@@ -136,7 +136,7 @@ export default function BookSeat() {
                         {
                             seat.map(item => (
                                 item === true ?
-                                    <b className="selected" onClick={Book.bind(this, index + 1)} >{index = index + 1}</b>
+                                    <b className="selected" >{index = index + 1}</b>
                                     :
                                     <b className="vacant" onClick={Book.bind(this, index + 1)} >{index = index + 1} </b>
                             ))

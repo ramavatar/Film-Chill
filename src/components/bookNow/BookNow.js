@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 export default function BookNow() {
     const history = useHistory()
     const back = () => {
-        history.push("/movies")
+        history.push("/")
     }
     return (
         <>
