@@ -218,6 +218,8 @@ context("test cases for Login",()=>{
         cy.get("#buttonLogin").click()
         cy.wait(1000)
         cy.get("#logout").should("have.text", "ram@gmail.com")
+        cy.visit("/details/438631")
+        cy.wait(2000)
     })
 })
 
